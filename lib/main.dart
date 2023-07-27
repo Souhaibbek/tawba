@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:tawba/routes/app_pages.dart';
 import 'package:tawba/routes/app_routes.dart';
+import 'package:tawba/styles/colors.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Tawba());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Tawba extends StatelessWidget {
+  const Tawba({super.key});
 
   // This widget is the root of your application.
   @override
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.pages,
       title: 'Tawba',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: AppColors.kScaffoldBackColor,
         useMaterial3: true,
       ),
     );
