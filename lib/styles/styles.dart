@@ -3,7 +3,7 @@ import 'package:tawba/styles/colors.dart';
 
 class AppTextStyles {
   static const TextStyle appBarTitle = TextStyle(
-    fontSize: 36,
+    fontSize: 30,
     fontWeight: FontWeight.w900,
     fontFamily: 'amiri',
     color: AppColors.kWhiteColor,
@@ -13,5 +13,23 @@ class AppTextStyles {
     fontWeight: FontWeight.w900,
     fontFamily: 'amiri',
     color: AppColors.kWhiteColor,
+  );
+  static const TextStyle zekrTextStyle = TextStyle(
+    fontSize: 18,
+    fontFamily: 'amiri',
+    fontWeight: FontWeight.w500,
+    color: AppColors.kWhiteColor,
+  );
+  static const TextStyle descriptionTextStyle = TextStyle(
+    fontSize: 15,
+    fontFamily: 'amiri',
+    fontWeight: FontWeight.w500,
+    color: AppColors.kWhiteColor,
+  );
+  static const TextStyle referenceTextStyle = TextStyle(
+    fontSize: 12,
+    fontFamily: 'amiri',
+    fontWeight: FontWeight.w500,
+    color: AppColors.kYellowColor,
   );
 }

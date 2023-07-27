@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:tawba/widgets/global_appbar.dart';
 
-import 'quran_controller.dart';
-
-class QuranPage extends GetView<QuranController> {
+class QuranPage extends StatelessWidget {
   const QuranPage({super.key});
 
   @override

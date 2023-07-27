@@ -20,7 +20,7 @@ class MenuItemBox extends StatelessWidget {
           height: 100,
           width: 100,
           decoration: BoxDecoration(
-            gradient: myLinearGradient(),
+            gradient: menuBoxItemLinearGradient(),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Align(

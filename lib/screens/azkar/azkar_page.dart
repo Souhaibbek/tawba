@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tawba/routes/app_routes.dart';
 import 'package:tawba/screens/azkar/azkar_controller.dart';
 import 'package:tawba/widgets/menu_item_box.dart';
 import 'package:tawba/widgets/global_appbar.dart';
@@ -9,8 +10,8 @@ class AzkarPage extends GetView<AzkarController> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: GlobalAppBar(
+    return Scaffold(
+      appBar: const GlobalAppBar(
         title: 'اذكار المسلم',
       ),
       body: Align(
@@ -22,11 +23,20 @@ class AzkarPage extends GetView<AzkarController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                MenuItemBox(title: 'اذكار المساء'),
-                MenuItemBox(title: 'اذكار الصباح'),
+                MenuItemBox(
+                  title: 'اذكار المساء',
+                  onTap: () => Get.toNamed(AppRoutes.AZKARMASSA),
+                ),
+                MenuItemBox(
+                  title: 'اذكار الصباح',
+                  onTap: () => Get.toNamed(AppRoutes.AZKARSABAH),
+                ),
               ],
             ),
-            MenuItemBox(title: 'بقيه الاذكار'),
+            MenuItemBox(
+              title: 'بقيه الاذكار',
+              onTap: () => Get.toNamed(AppRoutes.OTHERAZKAR),
+            ),
           ],
         ),
       ),

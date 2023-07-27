@@ -15,7 +15,7 @@ class SplashPage extends GetView<SplashController> {
       builder: (controller) {
         return Container(
           decoration: BoxDecoration(
-            gradient: myLinearGradient(),
+            gradient: menuBoxItemLinearGradient(),
           ),
           child: Scaffold(
             backgroundColor: Colors.transparent,

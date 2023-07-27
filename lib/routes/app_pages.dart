@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 import 'package:tawba/routes/app_routes.dart';
 import 'package:tawba/screens/ahadith/ahadith_page.dart';
+import 'package:tawba/screens/azkar/azkar_details/azkar_massa_view.dart';
+import 'package:tawba/screens/azkar/azkar_details/azkar_sabah_view.dart';
+import 'package:tawba/screens/azkar/azkar_details/other_azkar_view.dart';
 import 'package:tawba/screens/azkar/azkar_page.dart';
 import 'package:tawba/screens/god_names/god_names_page.dart';
 import 'package:tawba/screens/quran/quran_page.dart';
@@ -32,6 +35,18 @@ class AppPages {
     GetPage(
       name: AppRoutes.GODNAMES,
       page: () => const GodNamesPage(),
+    ),
+    GetPage(
+      name: AppRoutes.AZKARSABAH,
+      page: () => const AzkarSabahView(),
+    ),
+    GetPage(
+      name: AppRoutes.AZKARMASSA,
+      page: () => const AzkarMassaView(),
+    ),
+    GetPage(
+      name: AppRoutes.OTHERAZKAR,
+      page: () => const OtherAzkarView(),
     ),
   ];
 }

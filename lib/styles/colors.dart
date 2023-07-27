@@ -6,4 +6,7 @@ abstract class AppColors {
   static const Color kGradiantColor2 = Color(0xff006754);
   static const Color kWhiteColor = Color.fromARGB(255, 255, 255, 255);
   static const Color kBlackColor = Color.fromARGB(0, 0, 0, 0);
+  static const Color kGreyColor = Colors.grey;
+
+  static const Color kYellowColor = Colors.yellow;
 }

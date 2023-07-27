@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:tawba/screens/god_names/god_names_controller.dart';
 import 'package:tawba/widgets/global_appbar.dart';
 
-class GodNamesPage extends GetView<GodNamesController> {
+class GodNamesPage extends StatelessWidget {
   const GodNamesPage({super.key});
 
   @override
