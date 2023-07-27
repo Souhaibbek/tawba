@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tawba/screens/azkar/azkar_controller.dart';
+import 'package:tawba/widgets/menu_item_box.dart';
+import 'package:tawba/widgets/global_appbar.dart';
+
+class AzkarPage extends GetView<AzkarController> {
+  const AzkarPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      appBar: GlobalAppBar(
+        title: 'اذكار المسلم',
+      ),
+      body: Align(
+        alignment: Alignment.center,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            MenuItemBox(title: 'اذكار الصباح'),
+            MenuItemBox(title: 'اذكار المساء'),
+            MenuItemBox(title: 'بقيه الاذكار'),
+          ],
+        ),
+      ),
+    );
+  }
+}
