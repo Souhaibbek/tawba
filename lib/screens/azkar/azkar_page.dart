@@ -19,8 +19,13 @@ class AzkarPage extends GetView<AzkarController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            MenuItemBox(title: 'اذكار الصباح'),
-            MenuItemBox(title: 'اذكار المساء'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                MenuItemBox(title: 'اذكار المساء'),
+                MenuItemBox(title: 'اذكار الصباح'),
+              ],
+            ),
             MenuItemBox(title: 'بقيه الاذكار'),
           ],
         ),

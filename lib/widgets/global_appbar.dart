@@ -21,7 +21,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       flexibleSpace: Container(
         decoration: BoxDecoration(
-          gradient: myLinearGradient(),
+          gradient: appBarLinearGradient(),
         ),
       ),
     );
