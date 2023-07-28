@@ -23,15 +23,27 @@ class AzkarSabahView extends GetView<AzkarController> {
           return Align(
             alignment: Alignment.center,
             child: PageView.builder(
+              onPageChanged: (value) {
+                controller.resetCounter();
+                controller.resetProgressValue();
+              },
+              controller: controller.pageController,
+              physics: const BouncingScrollPhysics(),
               reverse: true,
               itemBuilder: (context, index) => ZekrItemWidget(
+                onTap: () {
+                  controller.changePage(
+                    controller.zekrSabah[index].countNumber,
+                  );
+                },
+                progressValue: controller.progressValue.value,
                 zekr: controller.zekrSabah[index].zekr,
                 count: controller.zekrSabah[index].count,
                 desc: controller.zekrSabah[index].desc,
                 ref: controller.zekrSabah[index].ref,
-                countNumber: controller.zekrSabah[index].countNumber,
+                countNumber: controller.counter.value,
                 length: controller.zekrSabah.length,
-                pos: index,
+                pos: index + 1,
               ),
               itemCount: controller.zekrSabah.length,
             ),

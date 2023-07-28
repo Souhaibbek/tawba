@@ -20,7 +20,7 @@ class Tawba extends StatelessWidget {
       getPages: AppPages.pages,
       title: 'Tawba',
       theme: ThemeData(
-        scaffoldBackgroundColor: AppColors.kScaffoldBackColor,
+        scaffoldBackgroundColor: AppColors.kGradiantColor2,
         useMaterial3: true,
       ),
     );

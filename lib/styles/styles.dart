@@ -15,7 +15,7 @@ class AppTextStyles {
     color: AppColors.kWhiteColor,
   );
   static const TextStyle zekrTextStyle = TextStyle(
-    fontSize: 18,
+    fontSize: 20,
     fontFamily: 'amiri',
     fontWeight: FontWeight.w500,
     color: AppColors.kWhiteColor,
