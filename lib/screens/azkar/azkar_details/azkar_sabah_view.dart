@@ -36,6 +36,10 @@ class AzkarSabahView extends GetView<AzkarController> {
                     controller.zekrSabah[index].countNumber,
                   );
                 },
+                size: controller.fontSize.value,
+                restart: () => controller.resetPages(),
+                addSize: () => controller.addSize(),
+                lowSize: () => controller.lowSize(),
                 progressValue: controller.progressValue.value,
                 zekr: controller.zekrSabah[index].zekr,
                 count: controller.zekrSabah[index].count,

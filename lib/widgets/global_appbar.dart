@@ -13,6 +13,13 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      actionsIconTheme: const IconThemeData(
+        color: Colors.white,
+      ),
+      iconTheme: const IconThemeData(
+        color: Colors.white,
+        size: 30,
+      ),
       title: Text(
         title,
         textDirection: TextDirection.rtl,

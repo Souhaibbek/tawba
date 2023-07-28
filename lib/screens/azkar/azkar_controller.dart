@@ -6,6 +6,7 @@ import 'package:tawba/utils/azkar_data.dart';
 class AzkarController extends GetxController {
   RxInt counter = 0.obs;
   RxDouble progressValue = 0.0.obs;
+  RxDouble fontSize = 0.0.obs;
   late PageController pageController;
   @override
   void onInit() {
@@ -15,6 +16,27 @@ class AzkarController extends GetxController {
 
   void resetCounter() {
     counter.value = 0;
+    update();
+  }
+
+  void addSize() {
+    fontSize.value++;
+    update();
+  }
+
+  void lowSize() {
+    fontSize.value--;
+    update();
+  }
+
+  void resetPages() {
+    pageController.jumpToPage(0);
+    resetSize();
+    update();
+  }
+
+  void resetSize() {
+    fontSize.value = 0;
     update();
   }
 
@@ -28,7 +50,7 @@ class AzkarController extends GetxController {
     progressValue.value = ((counter * 100) / number) / 100;
     if (counter.value >= number) {
       pageController.nextPage(
-          duration: const Duration(milliseconds: 1500),
+          duration: const Duration(milliseconds: 1000),
           curve: Curves.decelerate);
     }
     update();
