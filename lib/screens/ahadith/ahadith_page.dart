@@ -23,18 +23,13 @@ class AhadithPage extends GetView<AhadithController> {
           return Align(
             alignment: Alignment.center,
             child: PageView.builder(
-              onPageChanged: (value) {
-                controller.resetCounter();
-                controller.resetProgressValue();
-              },
+              onPageChanged: (value) {},
               controller: controller.pageController,
               physics: const BouncingScrollPhysics(),
               reverse: true,
               itemBuilder: (context, index) => HadithItemWidget(
                 onTap: () {
-                  // controller.changePage(
-                  //   controller.hadith[index].countNumber,
-                  // );
+                  controller.changePage();
                 },
                 size: controller.fontSize.value,
                 restart: () => controller.resetPages(),
@@ -42,7 +37,6 @@ class AhadithPage extends GetView<AhadithController> {
                 lowSize: () => controller.lowSize(),
                 hadithText: controller.hadithList[index].hadithText,
                 description: controller.hadithList[index].description,
-                length: controller.hadithList.length,
               ),
               itemCount: controller.hadithList.length,
             ),

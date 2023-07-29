@@ -7,11 +7,11 @@ import 'package:flutter/services.dart';
 
 import '../functions/icon_Button.dart';
 
-class HadithItemWidget extends StatelessWidget {
-  const HadithItemWidget({
+class GodNamesItemWidget extends StatelessWidget {
+  const GodNamesItemWidget({
     super.key,
-    required this.hadithText,
-    this.description = '',
+    required this.name,
+    this.desc = '',
     this.onTap,
     this.addSize,
     this.lowSize,
@@ -19,8 +19,8 @@ class HadithItemWidget extends StatelessWidget {
     this.copy,
     this.size = 0.0,
   });
-  final String hadithText;
-  final String description;
+  final String name;
+  final String desc;
 
   final void Function()? onTap;
 
@@ -49,8 +49,8 @@ class HadithItemWidget extends StatelessWidget {
                     iconButton(
                       icon: Icons.copy,
                       onTap: () {
-                        Clipboard.setData(ClipboardData(
-                                text: '$hadithText \n \n $description'))
+                        Clipboard.setData(
+                                ClipboardData(text: '$name \n \n $desc'))
                             .then((_) {
                           ScaffoldMessenger.of(context)
                               .showSnackBar(const SnackBar(
@@ -107,48 +107,50 @@ class HadithItemWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Center(
-                            child: SingleChildScrollView(
-                              child: Text(
-                                hadithText,
-                                textDirection: TextDirection.rtl,
-                                textAlign: TextAlign.center,
-                                style: AppTextStyles.zekrTextStyle.copyWith(
-                                  fontSize: 24 + size,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.8,
-                              height: 1,
-                              color: AppColors.kGreyColor,
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              if (description != '')
-                                Text(
-                                  description,
+                    child: Center(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Center(
+                              child: SingleChildScrollView(
+                                child: Text(
+                                  name,
                                   textDirection: TextDirection.rtl,
-                                  textAlign: TextAlign.right,
-                                  style: AppTextStyles.descriptionTextStyle
-                                      .copyWith(
-                                    fontSize: 15 + size,
+                                  textAlign: TextAlign.center,
+                                  style: AppTextStyles.zekrTextStyle.copyWith(
+                                    fontSize: 24 + size,
                                   ),
                                 ),
-                              const SizedBox(
-                                height: 5.0,
                               ),
-                            ],
-                          ),
-                        ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.8,
+                                height: 1,
+                                color: AppColors.kGreyColor,
+                              ),
+                            ),
+                            Column(
+                              children: [
+                                if (desc != '')
+                                  Text(
+                                    desc,
+                                    textDirection: TextDirection.rtl,
+                                    textAlign: TextAlign.right,
+                                    style: AppTextStyles.descriptionTextStyle
+                                        .copyWith(
+                                      fontSize: 15 + size,
+                                    ),
+                                  ),
+                                const SizedBox(
+                                  height: 5.0,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

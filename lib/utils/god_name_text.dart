@@ -1,4 +1,4 @@
-List<Map<String, String>> allhName = [
+List<Map<String, String>> godNames = [
   {
     "name": "اللَّهُ",
     "text":

@@ -151,34 +151,36 @@ class ZekrItemWidget extends StatelessWidget {
                                   color: AppColors.kGreyColor,
                                 ),
                               ),
-                            SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  if (desc != '')
+                            if (!min)
+                              SingleChildScrollView(
+                                child: Column(
+                                  children: [
+                                    if (desc != '')
+                                      Text(
+                                        desc,
+                                        textDirection: TextDirection.rtl,
+                                        textAlign: TextAlign.right,
+                                        style: AppTextStyles
+                                            .descriptionTextStyle
+                                            .copyWith(
+                                          fontSize: 15 + size,
+                                        ),
+                                      ),
+                                    const SizedBox(
+                                      height: 5.0,
+                                    ),
                                     Text(
-                                      desc,
+                                      ref,
                                       textDirection: TextDirection.rtl,
-                                      textAlign: TextAlign.right,
-                                      style: AppTextStyles.descriptionTextStyle
+                                      textAlign: TextAlign.center,
+                                      style: AppTextStyles.referenceTextStyle
                                           .copyWith(
-                                        fontSize: 15 + size,
+                                        fontSize: 12 + size,
                                       ),
                                     ),
-                                  const SizedBox(
-                                    height: 5.0,
-                                  ),
-                                  Text(
-                                    ref,
-                                    textDirection: TextDirection.rtl,
-                                    textAlign: TextAlign.center,
-                                    style: AppTextStyles.referenceTextStyle
-                                        .copyWith(
-                                      fontSize: 12 + size,
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
                           ],
                         ),
                       ),
