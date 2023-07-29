@@ -11,7 +11,7 @@ class AzkarTitleMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
       child: Container(
         height: 40,
         width: MediaQuery.of(context).size.width,

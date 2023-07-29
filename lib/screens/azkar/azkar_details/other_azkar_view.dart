@@ -24,13 +24,10 @@ class OtherAzkarView extends GetView<AzkarController> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Flexible(
-                child: ListView.separated(
+                child: ListView.builder(
                   itemCount: controller.azkarTitles.length,
                   shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),
-                  separatorBuilder: (context, index) => const SizedBox(
-                    height: 6.0,
-                  ),
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
