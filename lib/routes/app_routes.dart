@@ -8,6 +8,7 @@ abstract class AppRoutes {
   static const AZKARSABAH = '/azkar_sabah';
   static const AZKARMASSA = '/azkar_massa';
   static const OTHERAZKAR = '/other_azkar';
+  static const OTHERAZKARDETAILS = '/other_azkar_details';
   //ahadith
   static const AHADITH = '/ahadith';
   //godNames

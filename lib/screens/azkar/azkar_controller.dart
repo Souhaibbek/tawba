@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:tawba/models/zekrModel.dart';
+import 'package:tawba/routes/app_routes.dart';
 import 'package:tawba/utils/azkar_data.dart';
 
 class AzkarController extends GetxController {
@@ -50,8 +51,9 @@ class AzkarController extends GetxController {
     progressValue.value = ((counter * 100) / number) / 100;
     if (counter.value >= number) {
       pageController.nextPage(
-          duration: const Duration(milliseconds: 1000),
-          curve: Curves.decelerate);
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.decelerate,
+      );
     }
     update();
   }
@@ -74,5 +76,39 @@ class AzkarController extends GetxController {
     }
     update();
     return zekrMassa;
+  }
+
+  //otherAzkar
+  RxInt itemIndex = 0.obs;
+  List<String> azkarTitles = [];
+  List<String> getAzkarTitles() {
+    allAzkar.forEach((key, value) {
+      azkarTitles.add(key);
+    });
+    update();
+    return azkarTitles;
+  }
+
+  void onZekrItemPress(int index) {
+    resetCounter();
+    resetProgressValue();
+    itemIndex.value = index;
+    getOtherAzkar(index);
+    Get.toNamed(
+      AppRoutes.OTHERAZKARDETAILS,
+    );
+    update();
+  }
+
+  List<ZekrModel> otherAzkar = [];
+  List<ZekrModel> getOtherAzkar(
+    int index,
+  ) {
+    otherAzkar = [];
+    for (var element in allAzkar[azkarTitles[index]]!) {
+      otherAzkar.add(ZekrModel.fromJson(element));
+    }
+    update();
+    return otherAzkar;
   }
 }

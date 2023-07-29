@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tawba/functions/linear_gradient.dart';
 import 'package:tawba/styles/colors.dart';
 import 'package:tawba/styles/styles.dart';
@@ -10,8 +11,8 @@ class ZekrItemWidget extends StatelessWidget {
   const ZekrItemWidget({
     super.key,
     required this.zekr,
-    required this.desc,
-    required this.ref,
+    this.desc = '',
+    this.ref = '',
     required this.pos,
     required this.length,
     required this.count,
@@ -23,6 +24,7 @@ class ZekrItemWidget extends StatelessWidget {
     this.restart,
     this.copy,
     this.size = 0.0,
+    this.min = false,
   });
   final String zekr;
   final String desc;
@@ -34,6 +36,7 @@ class ZekrItemWidget extends StatelessWidget {
   final void Function()? onTap;
   final double progressValue;
   final double size;
+  final bool min;
   final void Function()? addSize;
   final void Function()? lowSize;
   final void Function()? restart;
@@ -81,9 +84,19 @@ class ZekrItemWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                iconButton(
-                  icon: Icons.refresh,
-                  onTap: restart,
+                Row(
+                  children: [
+                    iconButton(
+                      icon: Icons.refresh,
+                      onTap: restart,
+                    ),
+                    iconButton(
+                      icon: Icons.arrow_forward,
+                      onTap: () {
+                        Get.back();
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -128,14 +141,16 @@ class ZekrItemWidget extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.8,
-                                height: 1,
-                                color: AppColors.kGreyColor,
+                            if (!min)
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.8,
+                                  height: 1,
+                                  color: AppColors.kGreyColor,
+                                ),
                               ),
-                            ),
                             SingleChildScrollView(
                               child: Column(
                                 children: [

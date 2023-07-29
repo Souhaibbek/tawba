@@ -16,14 +16,17 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
       actionsIconTheme: const IconThemeData(
         color: Colors.white,
       ),
+      automaticallyImplyLeading: false,
       iconTheme: const IconThemeData(
         color: Colors.white,
         size: 30,
       ),
-      title: Text(
-        title,
-        textDirection: TextDirection.rtl,
-        style: AppTextStyles.appBarTitle,
+      title: FittedBox(
+        child: Text(
+          title,
+          textDirection: TextDirection.rtl,
+          style: AppTextStyles.appBarTitle,
+        ),
       ),
       centerTitle: true,
       flexibleSpace: Container(

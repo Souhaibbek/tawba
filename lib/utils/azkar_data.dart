@@ -489,7 +489,7 @@ List<Map<String, dynamic>> azkarMassa = [
 ];
 
 //جميع اذكار المسلم
-Map azkar = {
+Map<String, List<Map<String, dynamic>>> allAzkar = {
   "أذكار النوم": [
     {
       "count": "مرة واحدة",

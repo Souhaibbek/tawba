@@ -16,11 +16,11 @@ class ZekrModel {
 
   factory ZekrModel.fromJson(Map<String, dynamic> json) {
     return ZekrModel(
-      zekr: json['zekr'],
-      desc: json['description'],
-      ref: json['reference'],
-      countNumber: json['int'],
-      count: json['count'],
+      zekr: json['zekr'] ?? '',
+      desc: json['description'] ?? '',
+      ref: json['reference'] ?? '',
+      countNumber: json['int'] ?? 1,
+      count: json['count'] ?? '',
     );
   }
 }

@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:tawba/routes/app_pages.dart';
 import 'package:tawba/routes/app_routes.dart';
 import 'package:tawba/styles/colors.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+    ),
+  );
+
   runApp(const Tawba());
 }
 
 class Tawba extends StatelessWidget {
   const Tawba({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

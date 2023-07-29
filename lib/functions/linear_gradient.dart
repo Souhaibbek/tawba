@@ -6,10 +6,10 @@ LinearGradient appBarLinearGradient() {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: <Color>[
-      Color.fromARGB(255, 2, 80, 54),
-      AppColors.kGradiantColor2,
-      AppColors.kGradiantColor2,
-      Color.fromARGB(255, 2, 80, 54),
+      AppColors.kprimarygradientColor1,
+      AppColors.kprimarygradientColor2,
+      AppColors.kprimarygradientColor3,
+      AppColors.kprimarygradientColor4,
     ],
   );
 }
@@ -19,8 +19,8 @@ LinearGradient menuBoxItemLinearGradient() {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: <Color>[
-      AppColors.kGradiantColor1,
-      AppColors.kGradiantColor2,
+      AppColors.kprimarygradientColor1,
+      AppColors.kprimarygradientColor2,
     ],
   );
 }
@@ -30,10 +30,8 @@ LinearGradient zekrContainerLinearGradient() {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: <Color>[
-      Color.fromARGB(255, 34, 75, 61),
-      Color.fromARGB(255, 2, 80, 54),
-      Color.fromARGB(255, 34, 75, 61),
-      Color.fromARGB(255, 2, 80, 54),
+      AppColors.kprimarygradientColor1,
+      AppColors.kprimarygradientColor2,
     ],
   );
 }
