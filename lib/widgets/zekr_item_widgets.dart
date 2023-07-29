@@ -115,6 +115,7 @@ class ZekrItemWidget extends StatelessWidget {
                               child: Center(
                                 child: SingleChildScrollView(
                                   child: RichText(
+                                    textDirection: TextDirection.rtl,
                                     textAlign: TextAlign.center,
                                     text: TextSpan(
                                       text: zekr,
@@ -141,7 +142,8 @@ class ZekrItemWidget extends StatelessWidget {
                                   if (desc != '')
                                     Text(
                                       desc,
-                                      textAlign: TextAlign.center,
+                                      textDirection: TextDirection.rtl,
+                                      textAlign: TextAlign.right,
                                       style: AppTextStyles.descriptionTextStyle
                                           .copyWith(
                                         fontSize: 15 + size,
@@ -152,6 +154,7 @@ class ZekrItemWidget extends StatelessWidget {
                                   ),
                                   Text(
                                     ref,
+                                    textDirection: TextDirection.rtl,
                                     textAlign: TextAlign.center,
                                     style: AppTextStyles.referenceTextStyle
                                         .copyWith(
