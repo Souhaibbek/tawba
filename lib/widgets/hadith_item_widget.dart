@@ -104,9 +104,9 @@ class HadithItemWidget extends StatelessWidget {
                     bottomRight: Radius.circular(16),
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Expanded(
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

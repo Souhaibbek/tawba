@@ -104,53 +104,49 @@ class GodNamesItemWidget extends StatelessWidget {
                     bottomRight: Radius.circular(16),
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Expanded(
-                    child: Center(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Center(
-                              child: SingleChildScrollView(
-                                child: Text(
-                                  name,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(
+                            child: Text(
+                              name,
+                              textDirection: TextDirection.rtl,
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.zekrTextStyle.copyWith(
+                                fontSize: 36 + size,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              height: 1,
+                              color: AppColors.kGreyColor,
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              if (desc != '')
+                                Text(
+                                  desc,
                                   textDirection: TextDirection.rtl,
-                                  textAlign: TextAlign.center,
-                                  style: AppTextStyles.zekrTextStyle.copyWith(
-                                    fontSize: 24 + size,
+                                  textAlign: TextAlign.right,
+                                  style: AppTextStyles.descriptionTextStyle
+                                      .copyWith(
+                                    fontSize: 20 + size,
                                   ),
                                 ),
+                              const SizedBox(
+                                height: 5.0,
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.8,
-                                height: 1,
-                                color: AppColors.kGreyColor,
-                              ),
-                            ),
-                            Column(
-                              children: [
-                                if (desc != '')
-                                  Text(
-                                    desc,
-                                    textDirection: TextDirection.rtl,
-                                    textAlign: TextAlign.right,
-                                    style: AppTextStyles.descriptionTextStyle
-                                        .copyWith(
-                                      fontSize: 15 + size,
-                                    ),
-                                  ),
-                                const SizedBox(
-                                  height: 5.0,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
