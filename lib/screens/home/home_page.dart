@@ -44,6 +44,19 @@ class HomePage extends GetView<HomeController> {
               ),
             ],
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              MenuItemBox(
+                title: 'الرقية الشرعية',
+                onTap: () => Get.toNamed(AppRoutes.RUQIA),
+              ),
+              MenuItemBox(
+                title: 'احاديث نبوية',
+                onTap: () => Get.toNamed(AppRoutes.AHADITH),
+              ),
+            ],
+          ),
         ],
       ),
     );

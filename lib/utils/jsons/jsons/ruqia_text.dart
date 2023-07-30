@@ -1,7 +1,8 @@
-List ruqiaText = [
+List<Map<String, dynamic>> ruqia = [
   {
     "category": "الرُّقية الشرعية من القرآن الكريم",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "",
     "zekr":
@@ -9,7 +10,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من القرآن الكريم",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "",
     "zekr":
@@ -17,7 +19,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من القرآن الكريم",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "",
     "zekr":
@@ -25,7 +28,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من القرآن الكريم",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "",
     "zekr":
@@ -33,7 +37,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من القرآن الكريم",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "",
     "zekr":
@@ -41,7 +46,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من القرآن الكريم",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "",
     "zekr":
@@ -49,7 +55,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من القرآن الكريم",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "",
     "zekr":
@@ -57,7 +64,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من القرآن الكريم",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "",
     "zekr":
@@ -65,7 +73,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "فإذا قالَ ذلكَ قال الشيطانُ : حُفِظَ منِّي سائرَ اليومِ",
     "reference": "أبو داود",
     "zekr":
@@ -73,7 +82,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "الترمذي",
     "zekr":
@@ -81,7 +91,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "البخاري",
     "zekr":
@@ -89,14 +100,16 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "مسلم",
     "zekr": "أعوذُ بكلماتِ اللهِ التامَّاتِ مِن شرِّ ما خَلق."
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "مسلم",
     "zekr":
@@ -104,7 +117,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "مسلم",
     "zekr":
@@ -112,7 +126,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "7",
+    "int": 7,
+    "count": "سبعه مرات",
     "description": "",
     "reference": "أحمد",
     "zekr":
@@ -120,7 +135,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "البخاري",
     "zekr":
@@ -128,14 +144,16 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "أحمد",
     "zekr": "اللَّهُمَّ اشْفِ عَبْدَكَ، وصَدِّقْ رَسُولَك."
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "أحمد",
     "zekr":
@@ -143,7 +161,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "الترمذي",
     "zekr":
@@ -151,7 +170,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "أحمد\n",
     "zekr":
@@ -159,7 +179,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "3",
+    "int": 3,
+    "count": "ثلاثه مرات",
     "description": "",
     "reference": "أبو داود",
     "zekr":
@@ -167,7 +188,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "أحمد\n",
     "zekr":
@@ -175,7 +197,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "3",
+    "int": 3,
+    "count": "ثلاثه مرات",
     "description": "",
     "reference": "أبو داود",
     "zekr":
@@ -183,7 +206,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "أبو داود",
     "zekr":
@@ -191,7 +215,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "الترمذي",
     "zekr":
@@ -199,7 +224,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "البخاري\n",
     "zekr":
@@ -207,7 +233,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "7",
+    "int": 7,
+    "count": "سبعه مرات",
     "description": "",
     "reference": "أحمد",
     "zekr":
@@ -215,7 +242,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "الترمذي",
     "zekr":
@@ -223,7 +251,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "أبو داود",
     "zekr":
@@ -231,7 +260,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "مسلم",
     "zekr":
@@ -239,7 +269,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "أحمد",
     "zekr":
@@ -247,7 +278,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "البخاري",
     "zekr":
@@ -255,7 +287,8 @@ List ruqiaText = [
   },
   {
     "category": "الرُّقية الشرعية من السنة النبوية",
-    "count": "",
+    "int": 1,
+    "count": ' مرة واحدة ',
     "description": "",
     "reference": "مسلم",
     "zekr":
