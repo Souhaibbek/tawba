@@ -12,7 +12,7 @@ class WirdPage extends GetView<WirdController> {
     Get.put(WirdController());
     return Scaffold(
       appBar: const GlobalAppBar(
-        title: 'وردي اليومي',
+        title: 'الورد اليومي',
       ),
       body: GetBuilder(
         init: WirdController(),

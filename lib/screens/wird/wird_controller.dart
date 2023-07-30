@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tawba/functions/sound_on_click.dart';
 import 'package:tawba/models/WirdModel.dart';
 
 import 'package:tawba/utils/wird.dart';
@@ -55,6 +56,7 @@ class WirdController extends GetxController {
         curve: Curves.decelerate,
       );
     }
+    soundOnClick();
     update();
   }
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tawba/functions/sound_on_click.dart';
 import 'package:tawba/models/godnamesmodel.dart';
 import 'package:tawba/utils/god_name_text.dart';
 
@@ -38,6 +39,7 @@ class GodNamesController extends GetxController {
       duration: const Duration(milliseconds: 500),
       curve: Curves.decelerate,
     );
+    soundOnClick();
     update();
   }
 

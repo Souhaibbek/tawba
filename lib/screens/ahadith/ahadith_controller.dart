@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:tawba/functions/sound_on_click.dart';
 import 'package:tawba/models/hadithmodel.dart';
 import 'package:tawba/utils/hadith_text.dart';
 
@@ -40,6 +41,7 @@ class AhadithController extends GetxController {
       duration: const Duration(milliseconds: 500),
       curve: Curves.decelerate,
     );
+    soundOnClick();
     update();
   }
 
