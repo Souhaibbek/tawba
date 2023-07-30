@@ -52,8 +52,8 @@ class HomePage extends GetView<HomeController> {
                 onTap: () => Get.toNamed(AppRoutes.RUQIA),
               ),
               MenuItemBox(
-                title: 'احاديث نبوية',
-                onTap: () => Get.toNamed(AppRoutes.AHADITH),
+                title: 'وردي اليومي',
+                onTap: () => Get.toNamed(AppRoutes.WIRD),
               ),
             ],
           ),

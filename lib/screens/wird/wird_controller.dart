@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tawba/models/zekrModel.dart';
-import 'package:tawba/utils/ruqia_text.dart';
+import 'package:tawba/models/WirdModel.dart';
 
-class RuqiaController extends GetxController {
-  RxInt counter = 0.obs;
+import 'package:tawba/utils/wird.dart';
+
+class WirdController extends GetxController {
+  RxInt clicksNumber = 0.obs;
   RxDouble progressValue = 0.0.obs;
   RxDouble fontSize = 0.0.obs;
   late PageController pageController;
@@ -15,7 +16,7 @@ class RuqiaController extends GetxController {
   }
 
   void resetCounter() {
-    counter.value = 0;
+    clicksNumber.value = 0;
     update();
   }
 
@@ -46,9 +47,9 @@ class RuqiaController extends GetxController {
   }
 
   void changePage(int number) {
-    counter.value++;
-    progressValue.value = ((counter * 100) / number) / 100;
-    if (counter.value >= number) {
+    clicksNumber.value++;
+    progressValue.value = ((clicksNumber * 100) / number) / 100;
+    if (clicksNumber.value >= number) {
       pageController.nextPage(
         duration: const Duration(milliseconds: 500),
         curve: Curves.decelerate,
@@ -57,13 +58,13 @@ class RuqiaController extends GetxController {
     update();
   }
 
-  //ruqiaList
-  List<ZekrModel> ruqiaList = [];
-  List<ZekrModel> getRuqiaList() {
-    for (var item in ruqia) {
-      ruqiaList.add(ZekrModel.fromJson(item));
+  //wirdList
+  List<WirdModel> wirdList = [];
+  List<WirdModel> getwirdList() {
+    for (var item in wird) {
+      wirdList.add(WirdModel.fromJson(item));
     }
     update();
-    return ruqiaList;
+    return wirdList;
   }
 }
