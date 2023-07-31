@@ -25,7 +25,9 @@ class SurahMenuItem extends StatelessWidget {
         height: 70,
         color: color ?? Colors.white,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 4.0),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20.0,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -34,6 +36,7 @@ class SurahMenuItem extends StatelessWidget {
                 style: const TextStyle(fontSize: 22),
               ),
               Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
