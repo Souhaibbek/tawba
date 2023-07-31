@@ -18,7 +18,7 @@ class SurahMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 9,
+      height: 60,
       color: color ?? Colors.white,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
