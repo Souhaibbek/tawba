@@ -19,6 +19,7 @@ abstract class AppRoutes {
 
   //ruqia
   static const RUQIA = '/ruqia';
+  static const RUQIADETAILS = '/ruqia_details';
 
   //wird
   static const WIRD = '/wird';

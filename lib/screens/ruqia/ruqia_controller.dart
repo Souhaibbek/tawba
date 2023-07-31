@@ -59,13 +59,20 @@ class RuqiaController extends GetxController {
     update();
   }
 
-  //ruqiaList
-  List<ZekrModel> ruqiaList = [];
-  List<ZekrModel> getRuqiaList() {
-    for (var item in ruqia) {
-      ruqiaList.add(ZekrModel.fromJson(item));
+  //ruqiaData
+  List<ZekrModel> ruqiaData = [];
+  List<ZekrModel> getRuqiaData(int page) {
+    ruqiaData = [];
+    if (page == 0) {
+      for (var item in ruqiaQuran) {
+        ruqiaData.add(ZekrModel.fromJson(item));
+      }
+    } else {
+      for (var item in ruqiaSunnah) {
+        ruqiaData.add(ZekrModel.fromJson(item));
+      }
     }
     update();
-    return ruqiaList;
+    return ruqiaData;
   }
 }
