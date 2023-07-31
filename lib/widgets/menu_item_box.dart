@@ -18,7 +18,7 @@ class MenuItemBox extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Container(
           height: 100,
-          width: 100,
+          width: 120,
           decoration: BoxDecoration(
             gradient: menuBoxItemLinearGradient(),
             borderRadius: BorderRadius.circular(16),

@@ -17,7 +17,7 @@ class RuqiaPage extends GetView<RuqiaController> {
       ),
       body: Align(
         alignment: Alignment.center,
-        child: Column(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

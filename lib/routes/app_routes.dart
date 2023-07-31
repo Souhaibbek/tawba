@@ -16,6 +16,7 @@ abstract class AppRoutes {
 
   //quran
   static const QURAN = '/quran';
+  static const SURAH = '/surah';
 
   //ruqia
   static const RUQIA = '/ruqia';

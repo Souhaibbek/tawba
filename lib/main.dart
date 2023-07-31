@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:tawba/routes/app_pages.dart';
 import 'package:tawba/routes/app_routes.dart';
-import 'package:tawba/styles/colors.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -27,7 +26,7 @@ class Tawba extends StatelessWidget {
       getPages: AppPages.pages,
       title: 'Tawba',
       theme: ThemeData(
-        scaffoldBackgroundColor: AppColors.kGradiantColor3,
+        scaffoldBackgroundColor: Colors.white.withOpacity(0.9),
         useMaterial3: true,
       ),
     );

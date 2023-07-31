@@ -22,7 +22,6 @@ class ZekrItemWidget extends StatelessWidget {
     this.addSize,
     this.lowSize,
     this.restart,
-    this.copy,
     this.size = 0.0,
     this.min = false,
   });
@@ -40,7 +39,7 @@ class ZekrItemWidget extends StatelessWidget {
   final void Function()? addSize;
   final void Function()? lowSize;
   final void Function()? restart;
-  final void Function()? copy;
+
   @override
   Widget build(BuildContext context) {
     return Column(
