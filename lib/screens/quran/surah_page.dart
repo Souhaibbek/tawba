@@ -5,7 +5,8 @@ import 'package:tawba/styles/assets.dart';
 import 'package:tawba/styles/colors.dart';
 import 'package:tawba/styles/styles.dart';
 import 'package:tawba/widgets/global_appbar.dart';
-import 'package:tawba/widgets/surah_page_item.dart';
+import 'package:tawba/widgets/surah_item_list_view.dart';
+import 'package:tawba/widgets/surah_page_view.dart';
 
 class SurahPage extends GetView<QuranController> {
   const SurahPage({super.key});
@@ -13,16 +14,24 @@ class SurahPage extends GetView<QuranController> {
   @override
   Widget build(BuildContext context) {
     var surahIndex = Get.arguments;
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: const GlobalAppBar(
-        title: 'القرآن الكريم',
-      ),
-      body: GetBuilder(
-        init: QuranController(),
-        initState: (state) {},
-        builder: (controller) {
-          return SingleChildScrollView(
+    return GetBuilder(
+      init: QuranController(),
+      initState: (state) {},
+      builder: (controller) {
+        return Scaffold(
+          backgroundColor: Colors.white,
+          appBar: GlobalAppBar(
+            title: 'القرآن الكريم',
+            leading: GestureDetector(
+              child: const Icon(
+                Icons.swap_horiz_outlined,
+              ),
+              onTap: () {
+                controller.changeView();
+              },
+            ),
+          ),
+          body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Column(
@@ -39,19 +48,29 @@ class SurahPage extends GetView<QuranController> {
                       Column(
                         children: [
                           const SizedBox(
-                            height: 30,
+                            height: 20,
                           ),
                           Text(
                             'سورة ${controller.surahTitles[surahIndex - 1]}',
                             textAlign: TextAlign.right,
                             textDirection: TextDirection.rtl,
-                            style: AppTextStyles.zekrTextStyle.copyWith(
+                            style: AppTextStyles.surahTitleTextStyle.copyWith(
                               color: AppColors.kprimarygradientColor5,
                             ),
                           ),
                         ],
                       ),
                     ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Divider(
+                      height: 1,
+                      color: Colors.grey,
+                    ),
                   ),
                   const SizedBox(
                     height: 10,
@@ -69,31 +88,36 @@ class SurahPage extends GetView<QuranController> {
                   const SizedBox(
                     height: 10,
                   ),
-                  ListView.separated(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: controller.verses.length,
-                    separatorBuilder: (context, index) => const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Divider(
-                        height: 1,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    itemBuilder: (context, index) {
-                      return SurahPageItem(
-                        count: index + 1,
-                        verse: controller.verses[index],
-                        symbol: controller.verseSymbols[index],
-                      );
-                    },
-                  ),
+                  (!controller.pageView.value)
+                      ? ListView.separated(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: controller.verses.length,
+                          separatorBuilder: (context, index) => const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Divider(
+                              height: 1,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          itemBuilder: (context, index) {
+                            return SurahItemListView(
+                              count: index + 1,
+                              verse: controller.verses[index],
+                              symbol: controller.verseSymbols[index],
+                            );
+                          },
+                        )
+                      : SurahPageView(
+                          verses: controller.verses,
+                          symbols: controller.verseSymbols,
+                        ),
                 ],
               ),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

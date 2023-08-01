@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tawba/styles/styles.dart';
 
-class SurahPageItem extends StatelessWidget {
-  const SurahPageItem({
+class SurahItemListView extends StatelessWidget {
+  const SurahItemListView({
     super.key,
     required this.verse,
     required this.symbol,
@@ -52,11 +52,6 @@ class SurahPageItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Text(
-                //   count.toString(),
-                //   style: AppTextStyles.descriptionTextStyle
-                //       .copyWith(color: Colors.black),
-                // ),
               ],
             ),
             const SizedBox(
@@ -64,12 +59,23 @@ class SurahPageItem extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.centerRight,
-              child: Text(
-                verse + symbol,
+              child: RichText(
                 textAlign: TextAlign.right,
                 textDirection: TextDirection.rtl,
-                style:
-                    AppTextStyles.zekrTextStyle.copyWith(color: Colors.black),
+                text: TextSpan(children: [
+                  TextSpan(
+                    text: verse,
+                    style: AppTextStyles.versesTextStyle
+                        .copyWith(color: Colors.black),
+                  ),
+                  TextSpan(
+                    text: ' $symbol ',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
+                  ),
+                ]),
               ),
             )
           ],

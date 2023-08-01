@@ -9,7 +9,7 @@ class QuranController extends GetxController {
   List<String> verses = [];
   List<String> verseSymbols = [];
   String basmala = quran.basmala;
-
+  RxBool pageView = false.obs;
   List<String> getSurahMenuItems() {
     var totalsurah = quran.totalSurahCount;
 
@@ -57,5 +57,10 @@ class QuranController extends GetxController {
     }
     update();
     return verses;
+  }
+
+  void changeView() {
+    pageView.value = !pageView.value;
+    update();
   }
 }

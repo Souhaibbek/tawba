@@ -43,7 +43,7 @@ class SurahMenuItem extends StatelessWidget {
                     title,
                     textDirection: TextDirection.rtl,
                     textAlign: TextAlign.right,
-                    style: AppTextStyles.zekrTextStyle
+                    style: AppTextStyles.surahTitleTextStyle
                         .copyWith(color: Colors.black),
                   ),
                   (length < 11)
@@ -51,14 +51,14 @@ class SurahMenuItem extends StatelessWidget {
                           '$type - $length ايات',
                           textDirection: TextDirection.rtl,
                           textAlign: TextAlign.right,
-                          style: AppTextStyles.descriptionTextStyle
+                          style: AppTextStyles.surahTitleTextStyle
                               .copyWith(color: Colors.grey),
                         )
                       : Text(
                           '$type - $length اية',
                           textDirection: TextDirection.rtl,
                           textAlign: TextAlign.right,
-                          style: AppTextStyles.descriptionTextStyle
+                          style: AppTextStyles.surahTitleTextStyle
                               .copyWith(color: Colors.grey),
                         ),
                 ],

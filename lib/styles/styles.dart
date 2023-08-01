@@ -16,7 +16,7 @@ class AppTextStyles {
   );
   static const TextStyle zekrTextStyle = TextStyle(
     fontSize: 24,
-    fontFamily: 'amiri',
+    fontFamily: 'Amiri',
     fontWeight: FontWeight.w500,
     color: AppColors.kWhiteColor,
   );
@@ -31,5 +31,17 @@ class AppTextStyles {
     fontFamily: 'amiri',
     fontWeight: FontWeight.w500,
     color: AppColors.kYellowColor,
+  );
+  static const TextStyle versesTextStyle = TextStyle(
+    fontSize: 28,
+    fontFamily: 'Hafs',
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+  );
+  static const TextStyle surahTitleTextStyle = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w900,
+    fontFamily: 'hafs',
+    color: AppColors.kWhiteColor,
   );
 }

@@ -7,15 +7,22 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     this.height = 100.0,
     required this.title,
+    this.actions,
+    this.leading,
   });
   final double height;
   final String title;
+  final List<Widget>? actions;
+  final Widget? leading;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       actionsIconTheme: const IconThemeData(
         color: Colors.white,
       ),
+      elevation: 5,
+      actions: actions,
+      leading: leading,
       automaticallyImplyLeading: false,
       iconTheme: const IconThemeData(
         color: Colors.white,
