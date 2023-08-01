@@ -6,10 +6,15 @@ class SurahPageView extends StatelessWidget {
     super.key,
     required this.verses,
     required this.symbols,
+    this.playingSurah = false,
+    this.playSurahAudio,
+    this.stopSurahAudio,
   });
   final List<String> verses;
-
   final List<String> symbols;
+  final bool playingSurah;
+  final void Function()? playSurahAudio;
+  final void Function()? stopSurahAudio;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +23,29 @@ class SurahPageView extends StatelessWidget {
       child: SizedBox(
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  (!playingSurah)
+                      ? GestureDetector(
+                          onTap: playSurahAudio,
+                          child: const Icon(
+                            Icons.play_arrow_rounded,
+                            size: 30,
+                          ),
+                        )
+                      : GestureDetector(
+                          onTap: stopSurahAudio,
+                          child: const Icon(
+                            Icons.stop,
+                            size: 30,
+                          ),
+                        ),
+                ],
+              ),
+            ),
             RichText(
               textDirection: TextDirection.rtl,
               textAlign: TextAlign.right,
