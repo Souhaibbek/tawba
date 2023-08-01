@@ -28,12 +28,12 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.7
   get: ^4.6.5
+  just_audio: ^0.9.34
   quran: ^1.2.2
 
 dev_dependencies:
@@ -68,8 +68,6 @@ flutter:
     - family: Hafs
       fonts:
         - asset: fonts/Hafs.ttf
-    
-    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

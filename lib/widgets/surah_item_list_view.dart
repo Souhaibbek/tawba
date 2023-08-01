@@ -8,10 +8,17 @@ class SurahItemListView extends StatelessWidget {
     required this.verse,
     required this.symbol,
     required this.count,
+    this.playAudio,
+    required this.playing,
+    this.stopAudio,
   });
   final String verse;
   final String symbol;
   final int count;
+  final bool playing;
+  final void Function()? playAudio;
+
+  final void Function()? stopAudio;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,10 +31,21 @@ class SurahItemListView extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const Icon(
-                      Icons.play_arrow_rounded,
-                      size: 30,
-                    ),
+                    (!playing)
+                        ? GestureDetector(
+                            onTap: playAudio,
+                            child: const Icon(
+                              Icons.play_arrow_rounded,
+                              size: 30,
+                            ),
+                          )
+                        : GestureDetector(
+                            onTap: stopAudio,
+                            child: const Icon(
+                              Icons.play_arrow_rounded,
+                              size: 30,
+                            ),
+                          ),
                     const SizedBox(
                       width: 10,
                     ),
@@ -48,6 +66,7 @@ class SurahItemListView extends StatelessWidget {
                       child: const Icon(
                         Icons.copy,
                         size: 18,
+                        color: Colors.black,
                       ),
                     ),
                   ],

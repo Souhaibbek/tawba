@@ -105,6 +105,9 @@ class SurahPage extends GetView<QuranController> {
                               count: index + 1,
                               verse: controller.verses[index],
                               symbol: controller.verseSymbols[index],
+                              playing: controller.clicked.value,
+                              playAudio: () => controller.playAudio(index),
+                              stopAudio: () => controller.stopAudio(),
                             );
                           },
                         )
