@@ -51,6 +51,7 @@ class QuranController extends GetxController {
   List<String> getVersesBySurahNumber(int surahNumber) {
     verses = [];
     verseSymbols = [];
+    verseAudios = [];
     var surahLength = quran.getVerseCount(surahNumber);
     for (var i = 1; i <= surahLength; i++) {
       verses.add(
@@ -66,7 +67,7 @@ class QuranController extends GetxController {
         ),
       );
     }
-    log(verseAudios[0]);
+    log(verseAudios[10]);
     update();
     return verses;
   }
