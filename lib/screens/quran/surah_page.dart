@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:tawba/screens/quran/quran_controller.dart';
 import 'package:tawba/styles/assets.dart';
 import 'package:tawba/styles/colors.dart';
-import 'package:tawba/styles/styles.dart';
 import 'package:tawba/widgets/global_appbar.dart';
 import 'package:tawba/widgets/surah_item_list_view.dart';
 import 'package:tawba/widgets/surah_page_view.dart';
@@ -21,7 +20,7 @@ class SurahPage extends GetView<QuranController> {
         return Scaffold(
           backgroundColor: Colors.white,
           appBar: GlobalAppBar(
-            title: 'القرآن الكريم',
+            title: 'سورة ${controller.surahTitles[surahIndex - 1]}',
             leading: GestureDetector(
               child: const Icon(
                 Icons.swap_horiz_outlined,
@@ -36,42 +35,13 @@ class SurahPage extends GetView<QuranController> {
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Column(
                 children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.6,
-                          child: Image.asset(
-                            Assets.cover,
-                            color: AppColors.kprimarygradientColor5,
-                          )),
-                      Column(
-                        children: [
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            'سورة ${controller.surahTitles[surahIndex - 1]}',
-                            textAlign: TextAlign.right,
-                            textDirection: TextDirection.rtl,
-                            style: AppTextStyles.surahTitleTextStyle.copyWith(
-                              color: AppColors.kprimarygradientColor5,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Divider(
-                      height: 1,
-                      color: Colors.grey,
-                    ),
-                  ),
+                  // const Padding(
+                  //   padding: EdgeInsets.symmetric(horizontal: 20),
+                  //   child: Divider(
+                  //     height: 1,
+                  //     color: Colors.grey,
+                  //   ),
+                  // ),
                   const SizedBox(
                     height: 10,
                   ),

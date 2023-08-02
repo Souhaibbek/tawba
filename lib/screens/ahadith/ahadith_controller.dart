@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:tawba/functions/sound_on_click.dart';
@@ -50,7 +48,6 @@ class AhadithController extends GetxController {
     for (var item in hadith) {
       hadithList.add(HadithModel.fromJson(item));
     }
-    log(hadithList[1].hadithText);
     update();
     return hadithList;
   }

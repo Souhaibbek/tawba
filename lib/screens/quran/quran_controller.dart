@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:quran/quran.dart' as quran;
@@ -71,7 +69,6 @@ class QuranController extends GetxController {
       );
     }
     surahAudio = quran.getAudioURLBySurah(surahNumber);
-    log(surahAudio);
     update();
     return verses;
   }

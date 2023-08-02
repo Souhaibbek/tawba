@@ -19,8 +19,8 @@ LinearGradient menuBoxItemLinearGradient() {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: <Color>[
-      AppColors.kprimarygradientColor1,
-      AppColors.kprimarygradientColor2,
+      Color.fromARGB(255, 59, 172, 182),
+      Color.fromARGB(255, 34, 121, 129),
     ],
   );
 }
