@@ -20,7 +20,6 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
       actionsIconTheme: const IconThemeData(
         color: Colors.white,
       ),
-      elevation: 5,
       actions: actions,
       leading: leading,
       automaticallyImplyLeading: false,

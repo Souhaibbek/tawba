@@ -12,17 +12,25 @@ class QuranPage extends GetView<QuranController> {
   @override
   Widget build(BuildContext context) {
     Get.put(QuranController());
-    return Scaffold(
-      appBar: const GlobalAppBar(
-        title: 'القرآن الكريم',
-      ),
-      body: GetBuilder(
-        init: QuranController(),
-        initState: (state) {
-          controller.getSurahMenuItems();
-        },
-        builder: (controller) {
-          return SizedBox(
+    return GetBuilder(
+      init: QuranController(),
+      initState: (state) {
+        controller.getSurahMenuItems();
+      },
+      builder: (controller) {
+        return Scaffold(
+          appBar: GlobalAppBar(
+            title: 'القرآن الكريم',
+            leading: GestureDetector(
+              child: const Icon(
+                Icons.format_size_sharp,
+              ),
+              onTap: () {
+                Get.toNamed(AppRoutes.FONTSIZESETTINGS);
+              },
+            ),
+          ),
+          body: SizedBox(
             child: ListView.separated(
               shrinkWrap: true,
               itemCount: controller.surahTitles.length,
@@ -44,9 +52,9 @@ class QuranPage extends GetView<QuranController> {
                 );
               },
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

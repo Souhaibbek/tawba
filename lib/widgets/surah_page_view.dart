@@ -9,10 +9,12 @@ class SurahPageView extends StatelessWidget {
     this.playingSurah = false,
     this.playSurahAudio,
     this.stopSurahAudio,
+    this.fontSize = 30,
   });
   final List<String> verses;
   final List<String> symbols;
   final bool playingSurah;
+  final double fontSize;
   final void Function()? playSurahAudio;
   final void Function()? stopSurahAudio;
 
@@ -55,12 +57,13 @@ class SurahPageView extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: ' $data ',
-                        style: AppTextStyles.versesTextStyle,
+                        style: AppTextStyles.versesTextStyle
+                            .copyWith(fontSize: fontSize),
                       ),
                       TextSpan(
                         text: symbols[verses.indexOf(data)],
-                        style: const TextStyle(
-                          fontSize: 20,
+                        style: TextStyle(
+                          fontSize: fontSize - 5,
                           color: Colors.black,
                         ),
                       ),

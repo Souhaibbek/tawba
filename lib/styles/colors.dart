@@ -11,8 +11,8 @@ abstract class AppColors {
   static const Color kprimarygradientColor4 = Color(0xff094045);
   static const Color kprimarygradientColor5 = Color(0xff08373b);
 
-  static const Color kWhiteColor = Color.fromARGB(255, 255, 255, 255);
-  static const Color kBlackColor = Color.fromARGB(0, 0, 0, 0);
+  static const Color kWhiteColor = Colors.white;
+  static const Color kBlackColor = Colors.black;
   static const Color kGreyColor = Colors.grey;
 
   static const Color kYellowColor = Colors.yellow;

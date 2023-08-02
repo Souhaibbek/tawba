@@ -23,7 +23,7 @@ class SurahPage extends GetView<QuranController> {
             title: 'سورة ${controller.surahTitles[surahIndex - 1]}',
             leading: GestureDetector(
               child: const Icon(
-                Icons.swap_horiz_outlined,
+                Icons.change_circle_outlined,
               ),
               onTap: () {
                 controller.changeView();
@@ -50,13 +50,6 @@ class SurahPage extends GetView<QuranController> {
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Column(
                 children: [
-                  // const Padding(
-                  //   padding: EdgeInsets.symmetric(horizontal: 20),
-                  //   child: Divider(
-                  //     height: 1,
-                  //     color: Colors.grey,
-                  //   ),
-                  // ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -87,6 +80,7 @@ class SurahPage extends GetView<QuranController> {
                           ),
                           itemBuilder: (context, index) {
                             return SurahItemListView(
+                              size: controller.partSize.value,
                               count: index + 1,
                               verse: controller.verses[index],
                               symbol: controller.verseSymbols[index],
@@ -100,6 +94,7 @@ class SurahPage extends GetView<QuranController> {
                           },
                         )
                       : SurahPageView(
+                          fontSize: controller.fullSize.value,
                           verses: controller.verses,
                           symbols: controller.verseSymbols,
                           playingSurah: controller.clickedSurah.value,

@@ -90,7 +90,7 @@ class ZekrItemWidget extends StatelessWidget {
                       onTap: restart,
                     ),
                     iconButton(
-                      icon: Icons.arrow_forward,
+                      icon: Icons.arrow_forward_ios,
                       onTap: () {
                         Get.back();
                       },

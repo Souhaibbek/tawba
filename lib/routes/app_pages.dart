@@ -7,6 +7,7 @@ import 'package:tawba/screens/azkar/azkar_details/other_azkar_details.dart';
 import 'package:tawba/screens/azkar/azkar_details/other_azkar_view.dart';
 import 'package:tawba/screens/azkar/azkar_page.dart';
 import 'package:tawba/screens/god_names/god_names_page.dart';
+import 'package:tawba/screens/quran/font_size_settings.dart';
 import 'package:tawba/screens/quran/quran_page.dart';
 import 'package:tawba/screens/quran/surah_page.dart';
 import 'package:tawba/screens/ruqia/ruqia_details_view.dart';
@@ -40,6 +41,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.SURAH,
       page: () => const SurahPage(),
+    ),
+    GetPage(
+      name: AppRoutes.FONTSIZESETTINGS,
+      page: () => const FontSizeSettings(),
     ),
     GetPage(
       name: AppRoutes.RUQIA,

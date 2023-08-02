@@ -13,12 +13,14 @@ class SurahItemListView extends StatelessWidget {
     this.stopVerseAudio,
     required this.tafsir,
     required this.isTafsirShowed,
+    this.size = 30,
   });
   final String verse;
   final String symbol;
   final int count;
   final bool playingVerse;
   final bool isTafsirShowed;
+  final double size;
 
   final void Function()? playVerseAudio;
   final void Function()? stopVerseAudio;
@@ -89,12 +91,12 @@ class SurahItemListView extends StatelessWidget {
                   TextSpan(
                     text: verse,
                     style: AppTextStyles.versesTextStyle
-                        .copyWith(color: Colors.black),
+                        .copyWith(color: Colors.black, fontSize: size),
                   ),
                   TextSpan(
                     text: ' $symbol ',
-                    style: const TextStyle(
-                      fontSize: 20,
+                    style: TextStyle(
+                      fontSize: size - 5,
                       color: Colors.black,
                     ),
                   ),
@@ -112,14 +114,15 @@ class SurahItemListView extends StatelessWidget {
                       textAlign: TextAlign.right,
                       textDirection: TextDirection.rtl,
                       style: AppTextStyles.zekrTextStyle
-                          .copyWith(color: Colors.black38, fontSize: 20),
+                          .copyWith(color: Colors.black38, fontSize: size - 5),
                     ),
                     Text(
                       tafsir,
                       textAlign: TextAlign.right,
                       textDirection: TextDirection.rtl,
                       style: AppTextStyles.zekrTextStyle.copyWith(
-                          color: Colors.black.withOpacity(0.7), fontSize: 24),
+                          color: Colors.black.withOpacity(0.7),
+                          fontSize: size - 5),
                     ),
                   ],
                 ),

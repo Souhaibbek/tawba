@@ -40,11 +40,10 @@ class SurahMenuItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    title,
+                    "سورة $title",
                     textDirection: TextDirection.rtl,
                     textAlign: TextAlign.right,
-                    style: AppTextStyles.surahTitleTextStyle
-                        .copyWith(color: Colors.black),
+                    style: AppTextStyles.surahTitleTextStyle,
                   ),
                   (length < 11)
                       ? Text(

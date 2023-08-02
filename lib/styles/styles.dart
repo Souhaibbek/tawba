@@ -41,7 +41,7 @@ class AppTextStyles {
   static const TextStyle surahTitleTextStyle = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w900,
-    fontFamily: 'hafs',
-    color: AppColors.kWhiteColor,
+    fontFamily: 'Hafs',
+    color: AppColors.kBlackColor,
   );
 }

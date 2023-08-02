@@ -6,7 +6,8 @@ import 'package:tawba/utils/jsons/jsons/tafsir.dart';
 
 class QuranController extends GetxController {
   String basmala = quran.basmala;
-
+  RxDouble fullSize = 25.0.obs;
+  RxDouble partSize = 25.0.obs;
   RxBool pageView = false.obs;
 
   //surahs
@@ -135,5 +136,21 @@ class QuranController extends GetxController {
 
     update();
     return tafsirList;
+  }
+
+  void changeFontFullSize(double val) {
+    fullSize.value = val;
+    update();
+  }
+
+  void changeFontPartSize(double val) {
+    partSize.value = val;
+    update();
+  }
+
+  void defaultFontSize() {
+    partSize.value = 25.0;
+    fullSize.value = 25.0;
+    update();
   }
 }
