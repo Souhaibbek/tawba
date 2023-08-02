@@ -33,7 +33,7 @@ class AppTextStyles {
     color: AppColors.kYellowColor,
   );
   static const TextStyle versesTextStyle = TextStyle(
-    fontSize: 28,
+    fontSize: 30,
     fontFamily: 'Hafs',
     fontWeight: FontWeight.w500,
     color: Colors.black,

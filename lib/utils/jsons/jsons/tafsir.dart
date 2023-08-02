@@ -1,4 +1,4 @@
-List tafsir = [
+List<Map<String, dynamic>> tafsir = [
   {
     "aya": 1,
     "index": 1,

@@ -29,6 +29,21 @@ class SurahPage extends GetView<QuranController> {
                 controller.changeView();
               },
             ),
+            actions: [
+              (!controller.pageView.value)
+                  ? Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: GestureDetector(
+                        child: const Icon(
+                          Icons.travel_explore,
+                        ),
+                        onTap: () {
+                          controller.changeTafsirState();
+                        },
+                      ),
+                    )
+                  : Container(),
+            ],
           ),
           body: SingleChildScrollView(
             child: Padding(
@@ -79,6 +94,8 @@ class SurahPage extends GetView<QuranController> {
                               playVerseAudio: () =>
                                   controller.playVerseAudio(index),
                               stopVerseAudio: () => controller.stopVerseAudio(),
+                              tafsir: controller.tafsirList[index].text,
+                              isTafsirShowed: controller.showTafsir.value,
                             );
                           },
                         )

@@ -1,20 +1,20 @@
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:quran/quran.dart' as quran;
+import 'package:tawba/models/tafsirmodel.dart';
+import 'package:tawba/utils/jsons/jsons/tafsir.dart';
 
 class QuranController extends GetxController {
+  String basmala = quran.basmala;
+
+  RxBool pageView = false.obs;
+
+  //surahs
   List<String> surahTitles = [];
   List<String> surahType = [];
   List<int> surahLength = [];
   List<String> surahSymbols = [];
-  List<String> verses = [];
-  List<String> verseSymbols = [];
-  List<String> verseAudios = [];
-  String surahAudio = '';
-  String basmala = quran.basmala;
-  final versePlayer = AudioPlayer();
-  final surahPlayer = AudioPlayer();
-  RxBool pageView = false.obs;
+
   List<String> getSurahMenuItems() {
     var totalsurah = quran.totalSurahCount;
 
@@ -48,6 +48,11 @@ class QuranController extends GetxController {
     return surahTitles;
   }
 
+//verses
+  List<String> verses = [];
+  List<String> verseSymbols = [];
+  List<String> verseAudios = [];
+  String surahAudio = '';
   List<String> getVersesBySurahNumber(int surahNumber) {
     verses = [];
     verseSymbols = [];
@@ -78,6 +83,9 @@ class QuranController extends GetxController {
     update();
   }
 
+//audio
+  final versePlayer = AudioPlayer();
+  final surahPlayer = AudioPlayer();
   RxBool clickedVerse = false.obs;
   void playVerseAudio(int index) async {
     stopSurahAudio();
@@ -107,5 +115,25 @@ class QuranController extends GetxController {
     clickedSurah.value = false;
     await surahPlayer.stop();
     update();
+  }
+
+  //tafsiir
+  RxBool showTafsir = false.obs;
+  void changeTafsirState() {
+    showTafsir.value = !showTafsir.value;
+    update();
+  }
+
+  List<TafsirModel> tafsirList = [];
+  List<TafsirModel> getTafsir(int surahNumber) {
+    tafsirList = [];
+    for (var item in tafsir) {
+      if (item['sura'] == surahNumber) {
+        tafsirList.add(TafsirModel.fromJson(item));
+      }
+    }
+
+    update();
+    return tafsirList;
   }
 }

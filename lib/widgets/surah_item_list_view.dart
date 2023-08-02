@@ -11,13 +11,18 @@ class SurahItemListView extends StatelessWidget {
     this.playVerseAudio,
     this.playingVerse = false,
     this.stopVerseAudio,
+    required this.tafsir,
+    required this.isTafsirShowed,
   });
   final String verse;
   final String symbol;
   final int count;
   final bool playingVerse;
+  final bool isTafsirShowed;
+
   final void Function()? playVerseAudio;
   final void Function()? stopVerseAudio;
+  final String tafsir;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -95,7 +100,30 @@ class SurahItemListView extends StatelessWidget {
                   ),
                 ]),
               ),
-            )
+            ),
+            if (isTafsirShowed)
+              Align(
+                alignment: Alignment.centerRight,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      'تفسير:',
+                      textAlign: TextAlign.right,
+                      textDirection: TextDirection.rtl,
+                      style: AppTextStyles.zekrTextStyle
+                          .copyWith(color: Colors.black38, fontSize: 20),
+                    ),
+                    Text(
+                      tafsir,
+                      textAlign: TextAlign.right,
+                      textDirection: TextDirection.rtl,
+                      style: AppTextStyles.zekrTextStyle.copyWith(
+                          color: Colors.black.withOpacity(0.7), fontSize: 24),
+                    ),
+                  ],
+                ),
+              ),
           ],
         ),
       ),

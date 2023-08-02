@@ -39,6 +39,7 @@ class QuranPage extends GetView<QuranController> {
                   onTap: () {
                     Get.toNamed(AppRoutes.SURAH, arguments: index + 1);
                     controller.getVersesBySurahNumber(index + 1);
+                    controller.getTafsir(index + 1);
                   },
                 );
               },
