@@ -35,7 +35,7 @@ class MenuItemBox extends StatelessWidget {
               height: 80,
               child: Image.asset(
                 logo,
-                color: AppColors.kWhiteColor.withOpacity(0.25),
+                color: AppColors.kprimarygradientColor5.withOpacity(0.4),
               ),
             ),
             Align(
@@ -48,7 +48,7 @@ class MenuItemBox extends StatelessWidget {
                     title,
                     textAlign: TextAlign.center,
                     style: AppTextStyles.menuItemTitle.copyWith(
-                      color: AppColors.kprimarygradientColor5,
+                      color: AppColors.kWhiteColor,
                       fontSize: 24,
                     ),
                     textDirection: TextDirection.rtl,

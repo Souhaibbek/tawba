@@ -16,56 +16,58 @@ class HomePage extends GetView<HomeController> {
       appBar: const GlobalAppBar(
         title: 'الرئيسية',
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                MenuItemBox(
-                  logo: Assets.quranLogo,
-                  title: 'القرآن الكريم',
-                  onTap: () => Get.toNamed(AppRoutes.QURAN),
-                ),
-                MenuItemBox(
-                  logo: Assets.doa2,
-                  title: 'اذكار المسلم',
-                  onTap: () => Get.toNamed(AppRoutes.AZKAR),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                MenuItemBox(
-                  logo: Assets.godnameLogo,
-                  title: 'اسماء الله الحسنه',
-                  onTap: () => Get.toNamed(AppRoutes.GODNAMES),
-                ),
-                MenuItemBox(
-                  logo: Assets.elsirra,
-                  title: 'احاديث نبوية',
-                  onTap: () => Get.toNamed(AppRoutes.AHADITH),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                MenuItemBox(
-                  logo: Assets.ruqiaLogo,
-                  title: 'الرقية الشرعية',
-                  onTap: () => Get.toNamed(AppRoutes.RUQIA),
-                ),
-                MenuItemBox(
-                  logo: Assets.wirdLogo,
-                  title: 'الورد اليومي',
-                  onTap: () => Get.toNamed(AppRoutes.WIRD),
-                ),
-              ],
-            ),
-          ],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MenuItemBox(
+                    logo: Assets.quranLogo,
+                    title: 'القرآن الكريم',
+                    onTap: () => Get.toNamed(AppRoutes.QURAN),
+                  ),
+                  MenuItemBox(
+                    logo: Assets.doa2,
+                    title: 'اذكار المسلم',
+                    onTap: () => Get.toNamed(AppRoutes.AZKAR),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MenuItemBox(
+                    logo: Assets.godnameLogo,
+                    title: 'اسماء الله الحسنه',
+                    onTap: () => Get.toNamed(AppRoutes.GODNAMES),
+                  ),
+                  MenuItemBox(
+                    logo: Assets.elsirra,
+                    title: 'احاديث نبوية',
+                    onTap: () => Get.toNamed(AppRoutes.AHADITH),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MenuItemBox(
+                    logo: Assets.ruqiaLogo,
+                    title: 'الرقية الشرعية',
+                    onTap: () => Get.toNamed(AppRoutes.RUQIA),
+                  ),
+                  MenuItemBox(
+                    logo: Assets.wirdLogo,
+                    title: 'الورد اليومي',
+                    onTap: () => Get.toNamed(AppRoutes.WIRD),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

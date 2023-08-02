@@ -69,13 +69,6 @@ class SurahPageView extends StatelessWidget {
                 }).toList(),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Divider(
-                height: 1,
-                color: Colors.grey,
-              ),
-            ),
           ],
         ),
       ),
