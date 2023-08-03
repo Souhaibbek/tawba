@@ -35,3 +35,16 @@ LinearGradient zekrContainerLinearGradient() {
     ],
   );
 }
+
+LinearGradient searchBarGradient() {
+  return const LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: <Color>[
+      Color.fromARGB(255, 255, 255, 255),
+      Color.fromARGB(255, 116, 116, 116),
+      Color.fromARGB(255, 199, 199, 199),
+      Color.fromARGB(255, 0, 0, 0),
+    ],
+  );
+}

@@ -4,7 +4,8 @@ import 'package:tawba/routes/app_routes.dart';
 import 'package:tawba/screens/quran/quran_controller.dart';
 
 import 'package:tawba/widgets/global_appbar.dart';
-import 'package:tawba/widgets/surah_menu_item.dart';
+import 'package:tawba/widgets/search_bar.dart';
+import 'package:tawba/widgets/surahs_list_view.dart';
 
 class QuranPage extends GetView<QuranController> {
   const QuranPage({super.key});
@@ -30,28 +31,20 @@ class QuranPage extends GetView<QuranController> {
               },
             ),
           ),
-          body: SizedBox(
-            child: ListView.separated(
-              shrinkWrap: true,
-              itemCount: controller.surahTitles.length,
-              separatorBuilder: (context, index) =>
-                  const Divider(height: 1, color: Colors.white38),
-              itemBuilder: (context, index) {
-                return SurahMenuItem(
-                  symbol: controller.surahSymbols[index],
-                  title: controller.surahTitles[index],
-                  type: controller.surahType[index],
-                  length: controller.surahLength[index],
-                  color:
-                      (index % 2 != 0) ? Colors.white.withOpacity(0.9) : null,
-                  onTap: () {
-                    Get.toNamed(AppRoutes.SURAH, arguments: index + 1);
-                    controller.getVersesBySurahNumber(index + 1);
-                    controller.getTafsir(index + 1);
-                  },
-                );
-              },
-            ),
+          body: Column(
+            children: [
+              SearchBarWidgets(
+                controller: controller.searchSuraController,
+                hintText: 'بحث في سور القران الكريم',
+                onChanged: (val) {
+                  controller.getSearchedSura(val);
+                },
+              ),
+              SurahsListView(
+                controller: controller,
+                searchShow: controller.searchedSura.isNotEmpty,
+              ),
+            ],
           ),
         );
       },

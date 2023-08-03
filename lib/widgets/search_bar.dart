@@ -12,12 +12,15 @@ class SearchBarWidgets extends StatelessWidget {
       this.onChanged,
       this.onFieldSubmitted,
       this.onSaved,
-      this.validator});
+      this.validator,
+      this.hintText});
   final TextEditingController controller;
   final void Function(String)? onChanged;
   final void Function(String)? onFieldSubmitted;
   final void Function(String?)? onSaved;
   final String? Function(String?)? validator;
+  final String? hintText;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -45,21 +48,21 @@ class SearchBarWidgets extends StatelessWidget {
                     textAlign: TextAlign.right,
                     cursorColor: AppColors.kWhiteColor,
                     style: AppTextStyles.descriptionTextStyle,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         disabledBorder: InputBorder.none,
                         errorBorder: InputBorder.none,
                         alignLabelWithHint: true,
-                        hintText: 'بحث في الاذكار',
+                        hintText: hintText ?? 'بحث في الاذكار',
                         suffixIconColor: AppColors.kWhiteColor,
-                        suffixIcon: Icon(
+                        suffixIcon: const Icon(
                           Icons.search_outlined,
                         ),
                         hintTextDirection: TextDirection.rtl,
                         hintStyle: AppTextStyles.descriptionTextStyle,
                         filled: true,
-                        fillColor: Color.fromARGB(255, 10, 132, 143)),
+                        fillColor: const Color.fromARGB(255, 10, 132, 143)),
                   ),
                 ),
               ),

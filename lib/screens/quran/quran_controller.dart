@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:quran/quran.dart' as quran;
@@ -9,7 +10,7 @@ class QuranController extends GetxController {
   RxDouble fullSize = 25.0.obs;
   RxDouble partSize = 25.0.obs;
   RxBool pageView = false.obs;
-
+  TextEditingController searchSuraController = TextEditingController();
   //surahs
   List<String> surahTitles = [];
   List<String> surahType = [];
@@ -152,5 +153,18 @@ class QuranController extends GetxController {
     partSize.value = 25.0;
     fullSize.value = 25.0;
     update();
+  }
+
+//searchsura
+  List<String> searchedSura = [];
+  List<String> getSearchedSura(String searchSuraText) {
+    searchedSura = [];
+    for (var i in surahTitles) {
+      if (i.contains(searchSuraText)) {
+        searchedSura.add(i);
+      }
+    }
+    update();
+    return searchedSura;
   }
 }
