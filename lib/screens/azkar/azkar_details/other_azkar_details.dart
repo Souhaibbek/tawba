@@ -13,7 +13,9 @@ class OtherAzkarDetails extends GetView<AzkarController> {
 
     return Scaffold(
       appBar: GlobalAppBar(
-        title: controller.azkarTitles[controller.itemIndex.value],
+        title: (controller.searchedList.isNotEmpty)
+            ? controller.searchedList[controller.itemIndex.value]
+            : controller.azkarTitles[controller.itemIndex.value],
       ),
       body: GetBuilder(
         init: AzkarController(),

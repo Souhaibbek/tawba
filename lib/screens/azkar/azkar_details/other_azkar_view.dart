@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawba/screens/azkar/azkar_controller.dart';
-import 'package:tawba/widgets/azkar_title_menu_item.dart';
 import 'package:tawba/widgets/global_appbar.dart';
+import 'package:tawba/widgets/search_bar.dart';
+import 'package:tawba/widgets/zekr_list_view_widget.dart';
 
 class OtherAzkarView extends GetView<AzkarController> {
   const OtherAzkarView({super.key});
@@ -23,22 +24,18 @@ class OtherAzkarView extends GetView<AzkarController> {
           return Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Flexible(
-                child: ListView.builder(
-                  itemCount: controller.azkarTitles.length,
-                  shrinkWrap: true,
-                  physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        controller.onZekrItemPress(index);
-                      },
-                      child: AzkarTitleMenuItem(
-                          title: controller.azkarTitles[index]),
-                    );
-                  },
-                ),
+              SearchBarWidgets(
+                controller: controller.searchController,
+                onChanged: (val) {
+                  controller.getSearchResult(val);
+                },
+                onFieldSubmitted: (val) {
+                  controller.getSearchResult(val);
+                },
               ),
+              ZekrListView(
+                  searchShow: controller.searchController.text.isNotEmpty,
+                  controller: controller)
             ],
           );
         },

@@ -9,6 +9,7 @@ class AzkarController extends GetxController {
   RxInt counter = 0.obs;
   RxDouble progressValue = 0.0.obs;
   RxDouble fontSize = 0.0.obs;
+  TextEditingController searchController = TextEditingController();
   late PageController pageController;
   @override
   void onInit() {
@@ -91,11 +92,11 @@ class AzkarController extends GetxController {
     return azkarTitles;
   }
 
-  void onZekrItemPress(int index) {
+  void onZekrItemPress(int index, List list) {
     resetCounter();
     resetProgressValue();
     itemIndex.value = index;
-    getOtherAzkar(index);
+    getOtherAzkar(index, list);
     Get.toNamed(
       AppRoutes.OTHERAZKARDETAILS,
     );
@@ -105,12 +106,28 @@ class AzkarController extends GetxController {
   List<ZekrModel> otherAzkar = [];
   List<ZekrModel> getOtherAzkar(
     int index,
+    List list,
   ) {
     otherAzkar = [];
-    for (var element in allAzkar[azkarTitles[index]]!) {
+    for (var element in allAzkar[list[index]]!) {
       otherAzkar.add(ZekrModel.fromJson(element));
     }
     update();
     return otherAzkar;
+  }
+
+//search
+  List<String> searchedList = [];
+  List<String> getSearchResult(
+    String searchText,
+  ) {
+    searchedList = [];
+    allAzkar.forEach((key, value) {
+      if (key.contains(searchText)) {
+        searchedList.add(key);
+      }
+    });
+    update();
+    return searchedList;
   }
 }
