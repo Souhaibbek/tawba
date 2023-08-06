@@ -16,6 +16,13 @@ class WirdController extends GetxController {
     super.onInit();
   }
 
+  @override
+  void dispose() {
+    pageController.dispose();
+
+    super.dispose();
+  }
+
   void resetCounter() {
     clicksNumber.value = 0;
     update();

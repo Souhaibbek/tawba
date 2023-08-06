@@ -17,6 +17,13 @@ class AzkarController extends GetxController {
     super.onInit();
   }
 
+  @override
+  void dispose() {
+    searchController.dispose();
+    pageController.dispose();
+    super.dispose();
+  }
+
   void resetCounter() {
     counter.value = 0;
     update();

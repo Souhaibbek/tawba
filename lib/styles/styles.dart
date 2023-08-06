@@ -44,4 +44,16 @@ class AppTextStyles {
     fontFamily: 'Hafs',
     color: AppColors.kBlackColor,
   );
+  static const TextStyle suraTitleTextStyle2 = TextStyle(
+    fontSize: 20,
+    fontFamily: 'hafs',
+    fontWeight: FontWeight.w900,
+    color: AppColors.kWhiteColor,
+  );
+  static const TextStyle referenceTextStyle2 = TextStyle(
+    fontSize: 12,
+    fontFamily: 'amiri',
+    fontWeight: FontWeight.w500,
+    color: AppColors.kYellowColor,
+  );
 }

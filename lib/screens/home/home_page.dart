@@ -60,11 +60,16 @@ class HomePage extends GetView<HomeController> {
                     onTap: () => Get.toNamed(AppRoutes.RUQIA),
                   ),
                   MenuItemBox(
-                    logo: Assets.wirdLogo,
+                    logo: Assets.moshaf,
                     title: 'الورد اليومي',
                     onTap: () => Get.toNamed(AppRoutes.WIRD),
                   ),
                 ],
+              ),
+              MenuItemBox(
+                logo: Assets.wirdLogo,
+                title: 'القرآن الكريم' "\nPDF",
+                onTap: () => Get.toNamed(AppRoutes.PDFQURAN),
               ),
             ],
           ),

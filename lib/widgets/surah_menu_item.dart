@@ -8,14 +8,19 @@ class SurahMenuItem extends StatelessWidget {
     required this.type,
     required this.length,
     this.color,
-    required this.symbol,
+    this.symbol,
     this.onTap,
+    this.titleStyle,
+    this.descStyle,
   });
   final String title;
   final String type;
   final int length;
   final Color? color;
-  final String symbol;
+  final String? symbol;
+  final TextStyle? titleStyle;
+  final TextStyle? descStyle;
+
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
@@ -31,10 +36,11 @@ class SurahMenuItem extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                symbol,
-                style: const TextStyle(fontSize: 22),
-              ),
+              if (symbol != null)
+                Text(
+                  symbol!,
+                  style: const TextStyle(fontSize: 22),
+                ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -43,22 +49,24 @@ class SurahMenuItem extends StatelessWidget {
                     "سورة $title",
                     textDirection: TextDirection.rtl,
                     textAlign: TextAlign.right,
-                    style: AppTextStyles.surahTitleTextStyle,
+                    style: titleStyle ?? AppTextStyles.surahTitleTextStyle,
                   ),
                   (length < 11)
                       ? Text(
                           '$type - $length ايات',
                           textDirection: TextDirection.rtl,
                           textAlign: TextAlign.right,
-                          style: AppTextStyles.surahTitleTextStyle
-                              .copyWith(color: Colors.grey),
+                          style: descStyle ??
+                              AppTextStyles.surahTitleTextStyle
+                                  .copyWith(color: Colors.grey),
                         )
                       : Text(
                           '$type - $length اية',
                           textDirection: TextDirection.rtl,
                           textAlign: TextAlign.right,
-                          style: AppTextStyles.surahTitleTextStyle
-                              .copyWith(color: Colors.grey),
+                          style: descStyle ??
+                              AppTextStyles.surahTitleTextStyle
+                                  .copyWith(color: Colors.grey),
                         ),
                 ],
               ),

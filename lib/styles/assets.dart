@@ -16,4 +16,5 @@ class Assets {
   static const String tasbihLogo = "assets/img/tasbihLogo.png";
   static const String wirdLogo = "assets/img/wirdLogo.png";
   static const String moshaf = "assets/img/moshaf.png";
+  static const String pdfQR = "assets/pdf/quran.pdf";
 }

@@ -25,4 +25,7 @@ abstract class AppRoutes {
 
   //wird
   static const WIRD = '/wird';
+
+  //pdfQuran
+  static const PDFQURAN = '/pdf_quran';
 }

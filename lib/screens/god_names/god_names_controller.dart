@@ -13,6 +13,12 @@ class GodNamesController extends GetxController {
     super.onInit();
   }
 
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
   void addSize() {
     fontSize.value++;
     update();

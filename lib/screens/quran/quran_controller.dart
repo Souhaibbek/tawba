@@ -16,6 +16,12 @@ class QuranController extends GetxController {
   List<String> surahType = [];
   List<int> surahLength = [];
   List<String> surahSymbols = [];
+  @override
+  void dispose() {
+    searchSuraController.dispose();
+
+    super.dispose();
+  }
 
   List<String> getSurahMenuItems() {
     var totalsurah = quran.totalSurahCount;

@@ -15,6 +15,13 @@ class RuqiaController extends GetxController {
     super.onInit();
   }
 
+  @override
+  void dispose() {
+    pageController.dispose();
+
+    super.dispose();
+  }
+
   void resetCounter() {
     counter.value = 0;
     update();
