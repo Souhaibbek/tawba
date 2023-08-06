@@ -2,32 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pdfx/pdfx.dart';
 import 'package:tawba/models/quranmodel.dart';
+import 'package:tawba/services/shared_pref.dart';
 import 'package:tawba/styles/assets.dart';
 import 'package:tawba/utils/global_variables.dart';
 import 'package:tawba/utils/quran_text.dart';
 
 class PdfQuranController extends GetxController {
-  RxInt initialIndex = initPage.obs;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   late final PdfControllerPinch pdfPinchController;
 
   @override
-  void onInit() {
+  void onInit() async {
     getQuranInfo();
     pdfPinchController = PdfControllerPinch(
-        document: PdfDocument.openAsset(Assets.pdfQR),
-        initialPage: initialIndex.value);
+        document: PdfDocument.openAsset(Assets.pdfQR), initialPage: initValue!);
     super.onInit();
   }
 
-  @override
-  void dispose() {
-    pdfPinchController.dispose();
-    super.dispose();
-  }
-
-  void changePage(int index) {
-    initPage = index;
+  void jumpToPage(int index) async {
+    await SharedPrefHelper.saveInt(key: 'index', value: index);
+    initValue = index;
     pdfPinchController.jumpToPage(index);
     scaffoldKey.currentState!.closeEndDrawer();
     update();
@@ -41,5 +35,13 @@ class PdfQuranController extends GetxController {
     update();
 
     return quranList;
+  }
+
+  void changePage(int index) async {
+    if (index > 1) {
+      await SharedPrefHelper.saveInt(key: 'index', value: index);
+      initValue = index;
+      update();
+    }
   }
 }

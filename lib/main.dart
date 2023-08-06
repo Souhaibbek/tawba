@@ -3,8 +3,15 @@ import 'package:flutter/services.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:tawba/routes/app_pages.dart';
 import 'package:tawba/routes/app_routes.dart';
+import 'package:tawba/utils/global_variables.dart';
 
-void main() {
+import 'services/shared_pref.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPrefHelper.init();
+  initValue = await SharedPrefHelper.getInt(key: 'index') ?? 0;
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,

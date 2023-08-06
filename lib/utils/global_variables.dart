@@ -1,1 +1,1 @@
-int initPage = 0;
+int? initValue;

@@ -3,9 +3,7 @@ import 'package:get/get.dart';
 import 'package:pdfx/pdfx.dart';
 import 'package:tawba/styles/colors.dart';
 import 'package:tawba/styles/styles.dart';
-import 'package:tawba/utils/global_variables.dart';
 import 'package:tawba/widgets/surah_menu_item.dart';
-
 import 'pdf_controller.dart';
 
 class PdfQuran extends GetView<PdfQuranController> {
@@ -18,7 +16,7 @@ class PdfQuran extends GetView<PdfQuranController> {
       backgroundColor: Colors.transparent,
       key: controller.scaffoldKey,
       endDrawer: Drawer(
-        width: MediaQuery.of(context).size.width / 2.5,
+        width: MediaQuery.of(context).size.width / 2,
         elevation: 20,
         shadowColor: AppColors.kprimarygradientColor1,
         surfaceTintColor: Colors.black,
@@ -32,7 +30,7 @@ class PdfQuran extends GetView<PdfQuranController> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    controller.changePage(controller.quranList[index].page - 1);
+                    controller.jumpToPage(controller.quranList[index].page - 1);
                   },
                   child: SurahMenuItem(
                     color: Colors.transparent,
@@ -56,8 +54,8 @@ class PdfQuran extends GetView<PdfQuranController> {
         child: PdfViewPinch(
           controller: controller.pdfPinchController,
           scrollDirection: Axis.vertical,
-          onPageChanged: (page) {
-            initPage = page;
+          onPageChanged: (index) {
+            controller.changePage(index);
           },
         ),
       )),

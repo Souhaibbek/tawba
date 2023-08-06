@@ -36,6 +36,7 @@ dependencies:
   just_audio: ^0.9.34
   pdfx: ^2.4.0
   quran: ^1.2.2
+  shared_preferences: ^2.2.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
