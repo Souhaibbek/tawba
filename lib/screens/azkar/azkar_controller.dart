@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:tawba/functions/sound_on_click.dart';
 import 'package:tawba/models/zekrModel.dart';
 import 'package:tawba/routes/app_routes.dart';
-import 'package:tawba/utils/azkar_data.dart';
+import 'package:tawba/utils/jsons/azkar_data.dart';
 
 class AzkarController extends GetxController {
   RxInt counter = 0.obs;

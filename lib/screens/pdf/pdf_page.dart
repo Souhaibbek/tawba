@@ -30,7 +30,7 @@ class PdfQuran extends GetView<PdfQuranController> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    controller.jumpToPage(controller.quranList[index].page - 1);
+                    controller.jumpToPage(controller.quranList[index].page);
                   },
                   child: SurahMenuItem(
                     color: Colors.transparent,
@@ -51,12 +51,15 @@ class PdfQuran extends GetView<PdfQuranController> {
         onTap: () {
           controller.scaffoldKey.currentState!.openEndDrawer();
         },
-        child: PdfViewPinch(
-          controller: controller.pdfPinchController,
-          scrollDirection: Axis.vertical,
+        child: PdfView(
+          controller: controller.pdfController,
+          scrollDirection: Axis.horizontal,
           onPageChanged: (index) {
             controller.changePage(index);
           },
+          pageSnapping: false,
+          reverse: true,
+          physics: const BouncingScrollPhysics(),
         ),
       )),
     );

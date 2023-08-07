@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawba/functions/sound_on_click.dart';
 import 'package:tawba/models/WirdModel.dart';
-
-import 'package:tawba/utils/wird.dart';
+import 'package:tawba/utils/jsons/wird.dart';
 
 class WirdController extends GetxController {
   RxInt clicksNumber = 0.obs;

@@ -4,6 +4,7 @@ import 'package:tawba/binding/azkar_binding.dart';
 import 'package:tawba/binding/godnames_binding.dart';
 import 'package:tawba/binding/home_binding.dart';
 import 'package:tawba/binding/pdfqr_binding.dart';
+import 'package:tawba/binding/prayer_binding.dart';
 import 'package:tawba/binding/quran_binding.dart';
 import 'package:tawba/binding/ruqia_binding.dart';
 import 'package:tawba/binding/splash_binding.dart';
@@ -17,6 +18,7 @@ import 'package:tawba/screens/azkar/azkar_details/other_azkar_view.dart';
 import 'package:tawba/screens/azkar/azkar_page.dart';
 import 'package:tawba/screens/god_names/god_names_page.dart';
 import 'package:tawba/screens/pdf/pdf_page.dart';
+import 'package:tawba/screens/prayer/prayer_page.dart';
 import 'package:tawba/screens/quran/font_size_settings.dart';
 import 'package:tawba/screens/quran/quran_page.dart';
 import 'package:tawba/screens/quran/surah_page.dart';
@@ -107,6 +109,11 @@ class AppPages {
       binding: PdfQrBinding(),
       name: AppRoutes.PDFQURAN,
       page: () => const PdfQuran(),
+    ),
+    GetPage(
+      binding: PrayerBinding(),
+      name: AppRoutes.PRAYER,
+      page: () => const PrayerPage(),
     ),
   ];
 }

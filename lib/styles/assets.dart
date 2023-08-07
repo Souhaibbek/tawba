@@ -17,4 +17,10 @@ class Assets {
   static const String wirdLogo = "assets/img/wirdLogo.png";
   static const String moshaf = "assets/img/moshaf.png";
   static const String pdfQR = "assets/pdf/quran.pdf";
+  static const String asr = "assets/icons/asr.png";
+  static const String dhuhr = "assets/icons/dhuhr.png";
+  static const String fajr = "assets/icons/fajr.png";
+  static const String isha = "assets/icons/isha.png";
+  static const String sunrise = "assets/icons/sunrise.png";
+  static const String maghrib = "assets/icons/maghreb.png";
 }

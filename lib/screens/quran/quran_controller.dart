@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:quran/quran.dart' as quran;
 import 'package:tawba/models/tafsirmodel.dart';
-import 'package:tawba/utils/jsons/jsons/tafsir.dart';
+import 'package:tawba/utils/jsons/tafsir.dart';
 
 class QuranController extends GetxController {
   String basmala = quran.basmala;

@@ -28,4 +28,7 @@ abstract class AppRoutes {
 
   //pdfQuran
   static const PDFQURAN = '/pdf_quran';
+
+  //prayer
+  static const PRAYER = '/prayer';
 }

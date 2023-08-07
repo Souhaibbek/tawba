@@ -5,16 +5,16 @@ import 'package:tawba/models/quranmodel.dart';
 import 'package:tawba/services/shared_pref.dart';
 import 'package:tawba/styles/assets.dart';
 import 'package:tawba/utils/global_variables.dart';
-import 'package:tawba/utils/quran_text.dart';
+import 'package:tawba/utils/jsons/quran_text.dart';
 
 class PdfQuranController extends GetxController {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  late final PdfControllerPinch pdfPinchController;
+  late final PdfController pdfController;
 
   @override
   void onInit() async {
     getQuranInfo();
-    pdfPinchController = PdfControllerPinch(
+    pdfController = PdfController(
         document: PdfDocument.openAsset(Assets.pdfQR), initialPage: initValue!);
     super.onInit();
   }
@@ -22,7 +22,7 @@ class PdfQuranController extends GetxController {
   void jumpToPage(int index) async {
     await SharedPrefHelper.saveInt(key: 'index', value: index);
     initValue = index;
-    pdfPinchController.jumpToPage(index);
+    pdfController.jumpToPage(index);
     scaffoldKey.currentState!.closeEndDrawer();
     update();
   }

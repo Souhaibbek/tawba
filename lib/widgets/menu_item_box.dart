@@ -38,21 +38,18 @@ class MenuItemBox extends StatelessWidget {
                 color: AppColors.kprimarygradientColor5.withOpacity(0.4),
               ),
             ),
-            Align(
-              alignment: Alignment.center,
-              child: SizedBox(
-                height: 120,
-                width: 140,
-                child: Center(
-                  child: Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.menuItemTitle.copyWith(
-                      color: AppColors.kWhiteColor,
-                      fontSize: 24,
-                    ),
-                    textDirection: TextDirection.rtl,
+            SizedBox(
+              height: 120,
+              width: 140,
+              child: Center(
+                child: Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.menuItemTitle.copyWith(
+                    color: AppColors.kWhiteColor,
+                    fontSize: 24,
                   ),
+                  textDirection: TextDirection.rtl,
                 ),
               ),
             ),
