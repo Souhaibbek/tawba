@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
 
-import 'widgets/prayer_times_controller.dart';
+import '../../functions/prayer_times_data.dart';
 
 class PrayerController extends GetxController {
   List<String> prayerData = [];

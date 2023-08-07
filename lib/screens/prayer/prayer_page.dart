@@ -55,9 +55,9 @@ class PrayerPage extends GetView<PrayerController> {
                     decoration: BoxDecoration(
                       gradient: zekrContainerLinearGradient(),
                     ),
-                    child: controller.loading.value
-                        ? Center(
-                            child: Column(
+                    child: Center(
+                      child: controller.loading.value
+                          ? Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const CircularProgressIndicator(
@@ -72,39 +72,40 @@ class PrayerPage extends GetView<PrayerController> {
                                   ),
                                 )
                               ],
-                            ),
-                          )
-                        : Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: SingleChildScrollView(
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      '${controller.placemarks[0].administrativeArea}/${controller.placemarks[0].country}',
-                                      style: AppTextStyles.zekrTextStyle,
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    ListView.builder(
-                                      shrinkWrap: true,
-                                      physics:
-                                          const NeverScrollableScrollPhysics(),
-                                      itemCount: controller.prayerData.length,
-                                      itemBuilder: (context, index) {
-                                        return PrayerTimeItem(
-                                          time: controller.prayerData[index],
-                                          index: index,
-                                        );
-                                      },
-                                    ),
-                                  ],
+                            )
+                          : Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              child: SingleChildScrollView(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        '${controller.placemarks[0].administrativeArea}/${controller.placemarks[0].country}',
+                                        style: AppTextStyles.zekrTextStyle,
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      ListView.builder(
+                                        shrinkWrap: true,
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
+                                        itemCount: controller.prayerData.length,
+                                        itemBuilder: (context, index) {
+                                          return PrayerTimeItem(
+                                            time: controller.prayerData[index],
+                                            index: index,
+                                          );
+                                        },
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
+                    ),
                   ),
                 );
               },
