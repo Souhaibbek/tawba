@@ -1,30 +1,41 @@
 import 'package:adhan/adhan.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:intl/intl.dart';
-import 'location_services.dart';
+import 'package:location/location.dart';
+import '../services/location_services.dart';
 
 class PrayerTimesData {
   static List<Placemark> placemarks = [];
-  static Future<List<String>> initPrayerTimes() async {
-    final List<String> prayerData = [];
+  static late DateTime nxtPray;
+  static Future<LocationData> initLocation() async {
+    return await LocationService.determineLocation();
+  }
 
+  static Coordinates getCoordinates(LocationData location) {
+    final coord = Coordinates(location.latitude!, location.longitude!);
+    return coord;
+  }
+
+  static Future<List<Placemark>> getAddress(LocationData location) async {
+    final adress =
+        await placemarkFromCoordinates(location.latitude!, location.longitude!);
+    return adress;
+  }
+
+  static Future<PrayerTimes> initPrayerTimes() async {
     //determineLocation
-    final location = await LocationService.determineLocation();
+    final location = await initLocation();
 
     //get coordinatess
-    final coordinates = Coordinates(
-      32.9315727,
-      10.450413,
-    );
+    final coordinates = getCoordinates(location);
 
     //getAddress
-
-    placemarks =
-        await placemarkFromCoordinates(location.latitude!, location.longitude!);
+    placemarks = await getAddress(location);
 
     //get date
     // ignore: unused_local_variable
     final dateTime = DateTime.now();
+
     //setup params
     final params = CalculationMethod.muslim_world_league.getParameters();
     params.madhab = Madhab.shafi;
@@ -34,7 +45,13 @@ class PrayerTimesData {
       coordinates,
       params,
     );
+    return prayerTimes;
+  }
 
+  static Future<List<String>> getPrayerTimesList() async {
+    final prayerTimes = await initPrayerTimes();
+    final List<String> prayerData = [];
+    nxtPray = getNextPrayer(prayerTimes);
     final fajr = DateFormat.jm().format(prayerTimes.fajr);
     prayerData.add(fajr);
 
@@ -54,5 +71,11 @@ class PrayerTimesData {
     prayerData.add(isha);
 
     return prayerData;
+  }
+
+  static DateTime getNextPrayer(PrayerTimes prayerTimes) {
+    var nextPrayer = prayerTimes.nextPrayer();
+    DateTime nextPrayerTimeLeft = prayerTimes.timeForPrayer(nextPrayer)!;
+    return nextPrayerTimeLeft;
   }
 }
