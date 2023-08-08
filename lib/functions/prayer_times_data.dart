@@ -12,7 +12,10 @@ class PrayerTimesData {
     final location = await LocationService.determineLocation();
 
     //get coordinatess
-    final coordinates = Coordinates(32.9315727, 10.450413);
+    final coordinates = Coordinates(
+      32.9315727,
+      10.450413,
+    );
 
     //getAddress
 

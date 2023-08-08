@@ -56,4 +56,10 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.kYellowColor,
   );
+
+  static const TextStyle timerStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.w900,
+    color: AppColors.kWhiteColor,
+  );
 }

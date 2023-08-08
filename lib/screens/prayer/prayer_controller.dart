@@ -20,6 +20,7 @@ class PrayerController extends GetxController {
         return prayerData;
       }
     } catch (e) {
+      log('e.toString()');
       log(e.toString());
     }
     loading.value = false;
