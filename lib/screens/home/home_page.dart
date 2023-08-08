@@ -26,19 +26,14 @@ class HomePage extends GetView<HomeController> {
                   onTap: () => Get.toNamed(AppRoutes.QURAN),
                 ),
                 MenuItemBox(
-                  logo: Assets.salatLogo,
-                  title: 'اوقات الصلاة',
-                  onTap: () => Get.toNamed(AppRoutes.PRAYER),
-                ),
-                MenuItemBox(
                   logo: Assets.doa2,
                   title: 'اذكار المسلم',
                   onTap: () => Get.toNamed(AppRoutes.AZKAR),
                 ),
                 MenuItemBox(
-                  logo: Assets.godnameLogo,
-                  title: 'اسماء الله الحسنه',
-                  onTap: () => Get.toNamed(AppRoutes.GODNAMES),
+                  logo: Assets.salatLogo,
+                  title: 'اوقات الصلاة',
+                  onTap: () => Get.toNamed(AppRoutes.PRAYER),
                 ),
                 MenuItemBox(
                   logo: Assets.elsirra,
@@ -46,14 +41,19 @@ class HomePage extends GetView<HomeController> {
                   onTap: () => Get.toNamed(AppRoutes.AHADITH),
                 ),
                 MenuItemBox(
+                  logo: Assets.moshaf,
+                  title: 'الورد اليومي',
+                  onTap: () => Get.toNamed(AppRoutes.WIRD),
+                ),
+                MenuItemBox(
                   logo: Assets.ruqiaLogo,
                   title: 'الرقية الشرعية',
                   onTap: () => Get.toNamed(AppRoutes.RUQIA),
                 ),
                 MenuItemBox(
-                  logo: Assets.moshaf,
-                  title: 'الورد اليومي',
-                  onTap: () => Get.toNamed(AppRoutes.WIRD),
+                  logo: Assets.godnameLogo,
+                  title: 'اسماء الله الحسنه',
+                  onTap: () => Get.toNamed(AppRoutes.GODNAMES),
                 ),
                 MenuItemBox(
                   logo: Assets.wirdLogo,

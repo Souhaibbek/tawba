@@ -9,12 +9,12 @@ class PrayerController extends GetxController {
   List<String> prayerData = [];
   List<Placemark> placemarks = [];
   DateTime? nextPrayerDateTime;
-  String nxtPrayerTimeLeft = '';
+  RxString nxtPrayerTimeLeft = ''.obs;
   RxBool loading = false.obs;
   Future<List<String>> getPrayerData() async {
     loading.value = true;
     try {
-      if (prayerData.isEmpty) {
+      if (prayerData.isEmpty && placemarks.isEmpty) {
         prayerData = await PrayerTimesData.getPrayerTimesList();
         placemarks = await getAddress();
         nextPrayerDateTime = getNextPrayer();
@@ -41,18 +41,21 @@ class PrayerController extends GetxController {
 
   DateTime getNextPrayer() {
     nextPrayerDateTime = PrayerTimesData.nxtPray;
-    log('mmm+$nextPrayerDateTime');
 
     update();
     return nextPrayerDateTime!;
   }
 
-  void changeDurationFormat(DateTime dateTime) {
+  String changeDurationFormat(DateTime dateTime) {
     Duration duration = dateTime.difference(DateTime.now());
     String hours = duration.inHours.toString().padLeft(0, '2');
-    String minutes = duration.inMinutes.toString().padLeft(2, '0');
+    String minutes =
+        duration.inMinutes.remainder(60).toString().padLeft(2, '0');
+    String seconds =
+        duration.inSeconds.remainder(60).toString().padLeft(2, '0');
 
-    nxtPrayerTimeLeft = '$hours ساعة و  $minutes دقيقة';
+    nxtPrayerTimeLeft.value = '$hours:$minutes:$seconds';
     update();
+    return nxtPrayerTimeLeft.value;
   }
 }

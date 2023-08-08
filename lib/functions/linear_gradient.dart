@@ -48,3 +48,13 @@ LinearGradient searchBarGradient() {
     ],
   );
 }
+
+LinearGradient prayerGradientItem() {
+  return const LinearGradient(
+    colors: [
+      AppColors.kGradiantColor1,
+      AppColors.kGradiantColor2,
+      AppColors.kGradiantColor3
+    ],
+  );
+}
