@@ -26,6 +26,11 @@ class HomePage extends GetView<HomeController> {
                   onTap: () => Get.toNamed(AppRoutes.QURAN),
                 ),
                 MenuItemBox(
+                  logo: Assets.salatLogo,
+                  title: 'اوقات الصلاة',
+                  onTap: () => Get.toNamed(AppRoutes.PRAYER),
+                ),
+                MenuItemBox(
                   logo: Assets.doa2,
                   title: 'اذكار المسلم',
                   onTap: () => Get.toNamed(AppRoutes.AZKAR),
@@ -54,11 +59,6 @@ class HomePage extends GetView<HomeController> {
                   logo: Assets.wirdLogo,
                   title: 'القرآن الكريم' "\nPDF",
                   onTap: () => Get.toNamed(AppRoutes.PDFQURAN),
-                ),
-                MenuItemBox(
-                  logo: Assets.salatLogo,
-                  title: 'اوقات الصلاة',
-                  onTap: () => Get.toNamed(AppRoutes.PRAYER),
                 ),
               ],
             ),
