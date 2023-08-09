@@ -17,8 +17,11 @@ class PrayerTimesData {
   }
 
   static Future<List<Placemark>> getAddress(LocationData location) async {
-    final adress =
-        await placemarkFromCoordinates(location.latitude!, location.longitude!);
+    final adress = await placemarkFromCoordinates(
+      location.latitude!,
+      location.longitude!,
+      localeIdentifier: 'ara',
+    );
     return adress;
   }
 

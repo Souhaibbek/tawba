@@ -21,21 +21,44 @@ class PrayerSuccessWidget extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Column(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    '${controller.placemarks[0].administrativeArea}/${controller.placemarks[0].country}',
-                    style: AppTextStyles.zekrTextStyle,
+                  Column(
+                    children: [
+                      const Text(
+                        'الصلاة القادمه:',
+                        textAlign: TextAlign.right,
+                        textDirection: TextDirection.rtl,
+                        style: AppTextStyles.zekrTextStyle,
+                      ),
+                      Text(
+                        controller.nxtPrayerTimeLeft.value,
+                        textDirection: TextDirection.rtl,
+                        style: AppTextStyles.zekrTextStyle
+                            .copyWith(color: AppColors.kYellowColor),
+                      ),
+                    ],
                   ),
-                  const Text(
-                    ':الصلاة القادمه بعد',
-                    style: AppTextStyles.zekrTextStyle,
-                  ),
-                  Text(
-                    controller.nxtPrayerTimeLeft.value,
-                    textDirection: TextDirection.rtl,
-                    style: AppTextStyles.zekrTextStyle
-                        .copyWith(color: AppColors.kYellowColor),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const Text(
+                        'المدينة:',
+                        textAlign: TextAlign.right,
+                        textDirection: TextDirection.rtl,
+                        style: AppTextStyles.zekrTextStyle,
+                      ),
+                      Text(
+                        (controller.placemarks[1].administrativeArea != null &&
+                                controller.placemarks[1].administrativeArea !=
+                                    '')
+                            ? '${controller.placemarks[1].administrativeArea}'
+                            : '${controller.placemarks[0].administrativeArea}',
+                        style: AppTextStyles.zekrTextStyle
+                            .copyWith(color: AppColors.kYellowColor),
+                      ),
+                    ],
                   ),
                 ],
               ),
