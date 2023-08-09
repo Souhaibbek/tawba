@@ -31,4 +31,10 @@ abstract class AppRoutes {
 
   //prayer
   static const PRAYER = '/prayer';
+
+  //tasbih
+  static const TASBIH = '/tasbih';
+
+  //qiblah
+  static const QIBLAH = '/qiblah';
 }

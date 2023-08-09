@@ -60,6 +60,16 @@ class HomePage extends GetView<HomeController> {
                   title: 'القرآن الكريم' "\nPDF",
                   onTap: () => Get.toNamed(AppRoutes.PDFQURAN),
                 ),
+                MenuItemBox(
+                  logo: Assets.sebhaicon,
+                  title: "السبحة",
+                  onTap: () => Get.toNamed(AppRoutes.TASBIH),
+                ),
+                MenuItemBox(
+                  logo: Assets.qiblaicon,
+                  title: "القبلة",
+                  onTap: () => Get.toNamed(AppRoutes.QIBLAH),
+                ),
               ],
             ),
           ),

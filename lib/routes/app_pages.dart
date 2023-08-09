@@ -3,6 +3,8 @@ import 'package:tawba/binding/alhadith_binding.dart';
 import 'package:tawba/binding/azkar_binding.dart';
 import 'package:tawba/binding/godnames_binding.dart';
 import 'package:tawba/binding/home_binding.dart';
+import 'package:tawba/binding/qiblah_binding.dart';
+import 'package:tawba/binding/tasbih_binding.dart';
 import 'package:tawba/binding/pdfqr_binding.dart';
 import 'package:tawba/binding/prayer_binding.dart';
 import 'package:tawba/binding/quran_binding.dart';
@@ -19,12 +21,14 @@ import 'package:tawba/screens/azkar/azkar_page.dart';
 import 'package:tawba/screens/god_names/god_names_page.dart';
 import 'package:tawba/screens/pdf/pdf_page.dart';
 import 'package:tawba/screens/prayer/prayer_page.dart';
+import 'package:tawba/screens/qiblah/qiblah_page.dart';
 import 'package:tawba/screens/quran/font_size_settings.dart';
 import 'package:tawba/screens/quran/quran_page.dart';
 import 'package:tawba/screens/quran/surah_page.dart';
 import 'package:tawba/screens/ruqia/ruqia_details_view.dart';
 import 'package:tawba/screens/ruqia/ruqia_page.dart';
 import 'package:tawba/screens/splash/splash_page.dart';
+import 'package:tawba/screens/tasbih/tasbih_page.dart';
 import 'package:tawba/screens/wird/wird_page.dart';
 import '../screens/home/home_page.dart';
 
@@ -114,6 +118,16 @@ class AppPages {
       binding: PrayerBinding(),
       name: AppRoutes.PRAYER,
       page: () => const PrayerPage(),
+    ),
+    GetPage(
+      binding: TasbihBinding(),
+      name: AppRoutes.TASBIH,
+      page: () => const TasbihPage(),
+    ),
+    GetPage(
+      binding: QiblahBinding(),
+      name: AppRoutes.QIBLAH,
+      page: () => const QiblahPage(),
     ),
   ];
 }

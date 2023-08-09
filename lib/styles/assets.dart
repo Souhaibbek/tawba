@@ -1,5 +1,7 @@
 class Assets {
-  static const String logoSvg = "assets/img/logo.svg";
+  static const String compass = "assets/img/compass.svg";
+
+  static const String needle = "assets/img/needle.svg";
   static const String logo = "assets/img/logo.png";
   static const String basmalla = "assets/img/basmalla.png";
   static const String holder = "assets/img/holder.png";
@@ -23,4 +25,7 @@ class Assets {
   static const String isha = "assets/icons/isha.png";
   static const String sunrise = "assets/icons/sunrise.png";
   static const String maghrib = "assets/icons/maghreb.png";
+  static const String sabha = "assets/img/sabha.png";
+  static const String sebhaicon = "assets/img/sebhaicon.png";
+  static const String qiblaicon = "assets/img/qiblaicon.png";
 }
