@@ -9,21 +9,31 @@ import 'package:tawba/utils/jsons/quran_text.dart';
 
 class PdfQuranController extends GetxController {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  late final PdfController pdfController;
-
+  late final PdfControllerPinch pdfController;
+  RxInt allPagesCount = 0.obs;
+  RxInt currentPage = 0.obs;
+  RxString currentSura = 'الفاتحه'.obs;
   @override
   void onInit() async {
     getQuranInfo();
-    pdfController = PdfController(
+
+    pdfController = PdfControllerPinch(
         document: PdfDocument.openAsset(Assets.pdfQR), initialPage: initValue!);
+    currentPage.value = await SharedPrefHelper.getInt(key: 'index') ?? 0;
+    currentSura.value =
+        await SharedPrefHelper.getString(key: 'currentSura') ?? 'الفاتحه';
     super.onInit();
   }
 
-  void jumpToPage(int index) async {
-    await SharedPrefHelper.saveInt(key: 'index', value: index);
-    initValue = index;
-    pdfController.jumpToPage(index);
-    scaffoldKey.currentState!.closeEndDrawer();
+  @override
+  void dispose() {
+    pdfController.dispose();
+
+    super.dispose();
+  }
+
+  void getAllPageCount(int docLength) {
+    allPagesCount.value = docLength;
     update();
   }
 
@@ -38,10 +48,36 @@ class PdfQuranController extends GetxController {
   }
 
   void changePage(int index) async {
-    if (index > 1) {
+    if (index != 1) {
       await SharedPrefHelper.saveInt(key: 'index', value: index);
+      for (var i = 0; i < quranList.length; i++) {
+        if (quranList[i].page == index) {
+          currentSura.value = quranList[i].title;
+        }
+        if (currentSura.value == quranList[i].title &&
+            index < quranList[i].page) {
+          currentSura.value = quranList[i - 1].title;
+        }
+      }
       initValue = index;
-      update();
+      await SharedPrefHelper.saveString(
+          key: 'currentSura', value: currentSura.value);
+
+      currentPage.value = index;
     }
+  }
+
+  void jumpToPage(int pageIndex, int suraIndex) async {
+    await SharedPrefHelper.saveInt(key: 'index', value: pageIndex);
+    await SharedPrefHelper.saveString(
+        key: 'currentSura', value: currentSura.value);
+
+    initValue = pageIndex;
+
+    currentSura.value = quranList[suraIndex].title;
+    currentPage.value = pageIndex;
+
+    pdfController.jumpToPage(pageIndex - 1);
+    scaffoldKey.currentState!.closeEndDrawer();
   }
 }
