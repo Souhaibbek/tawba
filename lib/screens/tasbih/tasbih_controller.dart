@@ -6,6 +6,7 @@ class TasbihController extends GetxController {
   RxInt numbetoftasbeha = 0.obs;
 
   void tasbih() {
+    soundOnClick();
     angle.value++;
     numbetoftasbeha.value++;
   }
