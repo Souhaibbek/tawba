@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pdfx/pdfx.dart';
@@ -48,6 +50,7 @@ class PdfQuranController extends GetxController {
   }
 
   void changePage(int index) async {
+    log('change');
     if (index != 1) {
       await SharedPrefHelper.saveInt(key: 'index', value: index);
       for (var i = 0; i < quranList.length; i++) {
@@ -68,16 +71,18 @@ class PdfQuranController extends GetxController {
   }
 
   void jumpToPage(int pageIndex, int suraIndex) async {
+    log('jump');
+
     await SharedPrefHelper.saveInt(key: 'index', value: pageIndex);
     await SharedPrefHelper.saveString(
         key: 'currentSura', value: currentSura.value);
-
     initValue = pageIndex;
-
     currentSura.value = quranList[suraIndex].title;
     currentPage.value = pageIndex;
-
+    log(currentSura.value);
+    log(currentPage.value.toString());
     pdfController.jumpToPage(pageIndex - 1);
+
     scaffoldKey.currentState!.closeEndDrawer();
   }
 }
