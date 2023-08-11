@@ -14,78 +14,62 @@ class PdfQuran extends GetView<PdfQuranController> {
     PdfQuranController controller = Get.put(PdfQuranController());
     return Scaffold(
       extendBody: true,
-      bottomNavigationBar: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: Container(
-              margin: const EdgeInsets.fromLTRB(2.0, 8.0, 0.0, 8.0),
-              height: 50,
-              decoration: BoxDecoration(
-                color: AppColors.kprimarygradientColor1.withOpacity(0.85),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(4.0, 8.0, 4.0, 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Obx(
-                      () => Text(
-                        'عدد الصفحات:${controller.allPagesCount.value}',
-                        textDirection: TextDirection.rtl,
-                        style: AppTextStyles.descriptionTextStyle,
-                      ),
-                    ),
-                    Obx(
-                      () => Text(
-                        controller.currentSura.value,
-                        textDirection: TextDirection.rtl,
-                        style: AppTextStyles.descriptionTextStyle,
-                      ),
-                    ),
-                    Obx(
-                      () => Text(
-                        'الصفحة الحالية:${controller.currentPage.value}',
-                        textDirection: TextDirection.rtl,
-                        style: AppTextStyles.descriptionTextStyle,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          controller.scaffoldKey.currentState!.openEndDrawer();
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors.kprimarygradientColor1.withOpacity(0.85),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: const Padding(
+            padding: EdgeInsets.all(4.0),
+            child: Icon(
+              Icons.menu,
+              color: AppColors.kWhiteColor,
+              size: 25,
             ),
           ),
-          Container(
-            margin: const EdgeInsets.fromLTRB(2.0, 8.0, 2.0, 8.0),
-            height: 50,
-            decoration: BoxDecoration(
-              color: AppColors.kprimarygradientColor1.withOpacity(0.85),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: GestureDetector(
-              onTap: () => controller.scaffoldKey.currentState!.openEndDrawer(),
-              child: const Padding(
-                padding: EdgeInsets.fromLTRB(4.0, 8.0, 4.0, 8.0),
-                child: Center(
-                  child: Row(
-                    children: [
-                      Text(
-                        'الفهرس',
-                        textDirection: TextDirection.rtl,
-                        style: AppTextStyles.descriptionTextStyle,
-                      ),
-                      Icon(
-                        Icons.menu,
-                        color: AppColors.kWhiteColor,
-                      ),
-                    ],
-                  ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.all(8),
+        width: 200,
+        height: 50,
+        decoration: BoxDecoration(
+          color: AppColors.kprimarygradientColor1.withOpacity(0.85),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(4.0, 8.0, 4.0, 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Obx(
+                () => Text(
+                  'عدد الصفحات:${controller.allPagesCount.value}',
+                  textDirection: TextDirection.rtl,
+                  style: AppTextStyles.descriptionTextStyle,
                 ),
               ),
-            ),
+              Obx(
+                () => Text(
+                  controller.currentSura.value,
+                  textDirection: TextDirection.rtl,
+                  style: AppTextStyles.descriptionTextStyle,
+                ),
+              ),
+              Obx(
+                () => Text(
+                  'الصفحة الحالية:${controller.currentPage.value}',
+                  textDirection: TextDirection.rtl,
+                  style: AppTextStyles.descriptionTextStyle,
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
       key: controller.scaffoldKey,
       endDrawer: Drawer(
