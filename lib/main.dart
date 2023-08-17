@@ -6,14 +6,12 @@ import 'package:tawba/routes/app_routes.dart';
 import 'package:tawba/utils/global_variables.dart';
 import 'functions/notification.dart';
 import 'services/shared_pref.dart';
-import 'package:timezone/data/latest.dart' as tz;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   NotificationHelper notificationHelper = NotificationHelper();
   await notificationHelper.initialize(); // Initialize notification plugin
-  tz.initializeTimeZones();
-  await notificationHelper.schedulePeriodicNotifications();
+  notificationHelper.scheduleNextNotification();
 
   await SharedPrefHelper.init();
   initValue = await SharedPrefHelper.getInt(key: 'index') ?? 0;
