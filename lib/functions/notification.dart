@@ -11,7 +11,7 @@ class NotificationHelper {
   Future<void> initialize() async {
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings(
-            '@mipmap/tawba'); // Replace with your app's icon
+            '@mipmap/ic_launcher'); // Replace with your app's icon
 
     const InitializationSettings initializationSettings =
         InitializationSettings(
