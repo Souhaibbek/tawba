@@ -1,19 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawba/routes/app_routes.dart';
-import 'package:tawba/screens/home/home_controller.dart';
 import 'package:tawba/styles/assets.dart';
+import 'package:tawba/styles/colors.dart';
 import 'package:tawba/widgets/global_appbar.dart';
 import 'package:tawba/widgets/menu_item_box.dart';
 
-class HomePage extends GetView<HomeController> {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GlobalAppBar(
+      appBar: GlobalAppBar(
         title: 'الرئيسية',
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.notifications),
+          color: AppColors.kWhiteColor,
+        ),
       ),
       body: Center(
         child: SingleChildScrollView(
