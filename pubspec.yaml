@@ -40,7 +40,6 @@ dependencies:
   get: ^4.6.5
   intl: ^0.18.1
   just_audio: ^0.9.34
-  location: ^5.0.2+1
   pdfx: ^2.4.0
   quran: ^1.2.2
   shared_preferences: ^2.2.0
@@ -69,16 +68,12 @@ flutter:
     - family: Amiri
       fonts:
         - asset: fonts/Amiri-Regular.ttf
-          weight: 400
-        - asset: fonts/Amiri-Italic.ttf
-          style: italic
-        - asset: fonts/Amiri-Bold.ttf
-          weight: 700
-        - asset: fonts/Amiri-BoldItalic.ttf
-          style: italic
-    - family: Hafs
+    - family: HafsReg
       fonts:
-        - asset: fonts/Hafs.ttf
+        - asset: fonts/KFGQPC Uthmanic Script HAFS Regular.otf
+    - family: BigVesta
+      fonts:
+        - asset: fonts/BigVesta-Arabic-Regular.ttf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

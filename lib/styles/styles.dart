@@ -5,13 +5,13 @@ class AppTextStyles {
   static const TextStyle appBarTitle = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w900,
-    fontFamily: 'amiri',
+    fontFamily: 'BigVesta',
     color: AppColors.kWhiteColor,
   );
   static const TextStyle menuItemTitle = TextStyle(
     fontSize: 20,
-    fontWeight: FontWeight.w900,
-    fontFamily: 'amiri',
+    fontWeight: FontWeight.w700,
+    fontFamily: 'BigVesta',
     color: AppColors.kWhiteColor,
   );
   static const TextStyle zekrTextStyle = TextStyle(
@@ -22,37 +22,37 @@ class AppTextStyles {
   );
   static const TextStyle descriptionTextStyle = TextStyle(
     fontSize: 15,
-    fontFamily: 'amiri',
+    fontFamily: 'Amiri',
     fontWeight: FontWeight.w500,
     color: AppColors.kWhiteColor,
   );
   static const TextStyle referenceTextStyle = TextStyle(
     fontSize: 12,
-    fontFamily: 'amiri',
+    fontFamily: 'Amiri',
     fontWeight: FontWeight.w500,
     color: AppColors.kYellowColor,
   );
   static const TextStyle versesTextStyle = TextStyle(
     fontSize: 30,
-    fontFamily: 'Hafs',
+    fontFamily: 'HafsReg',
     fontWeight: FontWeight.w500,
     color: Colors.black,
   );
   static const TextStyle surahTitleTextStyle = TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.w900,
-    fontFamily: 'Hafs',
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'BigVesta',
     color: AppColors.kBlackColor,
   );
   static const TextStyle suraTitleTextStyle2 = TextStyle(
     fontSize: 20,
-    fontFamily: 'hafs',
+    fontFamily: 'HafsReg',
     fontWeight: FontWeight.w900,
     color: AppColors.kWhiteColor,
   );
   static const TextStyle referenceTextStyle2 = TextStyle(
     fontSize: 12,
-    fontFamily: 'amiri',
+    fontFamily: 'Amiri',
     fontWeight: FontWeight.w500,
     color: AppColors.kYellowColor,
   );
@@ -60,6 +60,7 @@ class AppTextStyles {
   static const TextStyle timerStyle = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w900,
+    fontFamily: 'BigVesta',
     color: AppColors.kWhiteColor,
   );
 }
