@@ -85,7 +85,7 @@ class SurahItemListView extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: RichText(
-                textAlign: TextAlign.right,
+                textAlign: TextAlign.justify,
                 textDirection: TextDirection.rtl,
                 text: TextSpan(children: [
                   TextSpan(

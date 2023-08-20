@@ -34,6 +34,7 @@ class SurahMenuItem extends StatelessWidget {
             horizontal: 20.0,
           ),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               if (symbol != null)
@@ -42,7 +43,7 @@ class SurahMenuItem extends StatelessWidget {
                   style: const TextStyle(fontSize: 22),
                 ),
               Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(

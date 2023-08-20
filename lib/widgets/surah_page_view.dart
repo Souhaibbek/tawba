@@ -50,7 +50,7 @@ class SurahPageView extends StatelessWidget {
             ),
             RichText(
               textDirection: TextDirection.rtl,
-              textAlign: TextAlign.right,
+              textAlign: TextAlign.justify,
               text: TextSpan(
                 children: verses.map((data) {
                   return TextSpan(

@@ -1,25 +1,25 @@
 import 'package:adhan/adhan.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
-import 'package:location/location.dart';
-import '../services/location_services.dart';
+import 'package:tawba/services/location_services.dart';
 
 class PrayerTimesData {
   static List<Placemark> placemarks = [];
   static late DateTime nxtPray;
-  static Future<LocationData> initLocation() async {
-    return await LocationService.determineLocation();
+  static Future<Position> initLocation() async {
+    return await LocationService.determinePosition();
   }
 
-  static Coordinates getCoordinates(LocationData location) {
-    final coord = Coordinates(location.latitude!, location.longitude!);
+  static Coordinates getCoordinates(Position location) {
+    final coord = Coordinates(location.latitude, location.longitude);
     return coord;
   }
 
-  static Future<List<Placemark>> getAddress(LocationData location) async {
+  static Future<List<Placemark>> getAddress(Position location) async {
     final adress = await placemarkFromCoordinates(
-      location.latitude!,
-      location.longitude!,
+      location.latitude,
+      location.longitude,
       localeIdentifier: 'ara',
     );
     return adress;

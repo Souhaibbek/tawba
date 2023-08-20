@@ -28,4 +28,7 @@ class Assets {
   static const String sabha = "assets/img/sabha.png";
   static const String sebhaicon = "assets/img/sebhaicon.png";
   static const String qiblaicon = "assets/img/qiblaicon.png";
+  static const String qibla = "assets/img/qibla.png";
+  static const String compassIcon = "assets/img/compass_icon.png";
+  static const String quranIcon = "assets/img/quran_icon.png";
 }

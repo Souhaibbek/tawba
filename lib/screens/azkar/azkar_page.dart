@@ -32,14 +32,14 @@ class AzkarPage extends GetView<AzkarController> {
                       onTap: () => Get.toNamed(AppRoutes.AZKARMASSA),
                     ),
                     MenuItemBox(
-                      logo: Assets.salatLogo,
+                      logo: Assets.doa,
                       title: 'اذكار الصباح',
                       onTap: () => Get.toNamed(AppRoutes.AZKARSABAH),
                     ),
                   ],
                 ),
                 MenuItemBox(
-                  logo: Assets.doa,
+                  logo: Assets.quranIcon,
                   title: 'بقيه الاذكار',
                   onTap: () => Get.toNamed(AppRoutes.OTHERAZKAR),
                 ),
