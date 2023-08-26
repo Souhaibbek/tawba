@@ -63,4 +63,11 @@ class AppTextStyles {
     fontFamily: 'BigVesta',
     color: AppColors.kWhiteColor,
   );
+
+  static const TextStyle prayerStyle = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w900,
+    fontFamily: 'BigVesta',
+    color: AppColors.kWhiteColor,
+  );
 }

@@ -7,19 +7,13 @@ class PrayerTimeItem extends StatelessWidget {
   const PrayerTimeItem({
     super.key,
     required this.time,
+    required this.name,
     required this.index,
   });
   final String time;
 
+  final String name;
   final int index;
-  static const List<String> prayersNames = [
-    'الفجر',
-    'الشروق',
-    'الظهر',
-    'العصر',
-    'المغرب',
-    'العشاء',
-  ];
   static const List<String> prayersIcons = [
     Assets.fajr,
     Assets.sunrise,
@@ -31,7 +25,7 @@ class PrayerTimeItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.symmetric(vertical: 5.0),
       child: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -48,14 +42,15 @@ class PrayerTimeItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                time,
-                style: AppTextStyles.referenceTextStyle.copyWith(fontSize: 20),
+                time.substring(1, time.length - 1),
+                style: AppTextStyles.prayerStyle
+                    .copyWith(color: AppColors.kYellowColor),
               ),
               Row(
                 children: [
                   Text(
-                    prayersNames[index],
-                    style: AppTextStyles.zekrTextStyle,
+                    name.substring(1, name.length - 1),
+                    style: AppTextStyles.prayerStyle,
                   ),
                   const SizedBox(
                     width: 10,

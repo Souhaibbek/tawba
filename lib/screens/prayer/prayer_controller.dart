@@ -6,18 +6,20 @@ import 'package:get/get.dart';
 import '../../functions/prayer_times_data.dart';
 
 class PrayerController extends GetxController {
-  List<String> prayerData = [];
+  List<Map<String, String>> prayerData = [];
   List<Placemark> placemarks = [];
   DateTime? nextPrayerDateTime;
+  String nextPrayerName = '';
   RxString nxtPrayerTimeLeft = ''.obs;
   RxBool loading = false.obs;
-  Future<List<String>> getPrayerData() async {
+  Future<List<Map<String, String>>> getPrayerData() async {
     loading.value = true;
     try {
       if (prayerData.isEmpty && placemarks.isEmpty) {
         prayerData = await PrayerTimesData.getPrayerTimesList();
         placemarks = await getAddress();
         nextPrayerDateTime = getNextPrayer();
+        nextPrayerName = getNextPrayerName();
         changeDurationFormat(nextPrayerDateTime!);
         loading.value = false;
         update();
@@ -57,5 +59,31 @@ class PrayerController extends GetxController {
     nxtPrayerTimeLeft.value = '$hours:$minutes:$seconds';
     update();
     return nxtPrayerTimeLeft.value;
+  }
+
+  String getNextPrayerName() {
+    switch (PrayerTimesData.nextPrayer.toString()) {
+      case 'Prayer.fajr':
+        nextPrayerName = 'الفجر';
+        break;
+      case 'Prayer.sunrise':
+        nextPrayerName = 'الشروق';
+        break;
+      case 'Prayer.dhuhr':
+        nextPrayerName = 'الظهر';
+        break;
+      case 'Prayer.asr':
+        nextPrayerName = 'العصر';
+        break;
+      case 'Prayer.maghrib':
+        nextPrayerName = 'المغرب';
+        break;
+      case 'Prayer.isha':
+        nextPrayerName = 'العشاء';
+        break;
+      default:
+        nextPrayerName = 'الصلاة القادمه';
+    }
+    return nextPrayerName;
   }
 }

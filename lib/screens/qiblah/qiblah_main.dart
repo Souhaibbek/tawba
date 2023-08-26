@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:tawba/styles/colors.dart';
 import 'package:tawba/widgets/global_appbar.dart';
-
 import 'qiblah_compass.dart';
 
 class QiblahMain extends StatelessWidget {
@@ -41,7 +40,8 @@ class QiblahMain extends StatelessWidget {
                   } else {
                     return Center(
                       child: Text(
-                        "Your device is not supported",
+                        "عذرًا، جهازك لا يدعم هذه الميزة",
+                        textDirection: TextDirection.rtl,
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
                     );

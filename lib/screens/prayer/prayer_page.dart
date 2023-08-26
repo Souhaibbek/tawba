@@ -30,7 +30,7 @@ class PrayerPage extends GetView<PrayerController> {
                   Container(
                     width: MediaQuery.of(context).size.width - 16.0,
                     decoration: BoxDecoration(
-                      gradient: prayerGradientItem(),
+                      gradient: zekrContainerLinearGradient(),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),

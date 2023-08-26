@@ -1,25 +1,29 @@
+import 'dart:developer';
+
 import 'package:adhan/adhan.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
+import 'package:location/location.dart';
 import 'package:tawba/services/location_services.dart';
 
 class PrayerTimesData {
   static List<Placemark> placemarks = [];
   static late DateTime nxtPray;
-  static Future<Position> initLocation() async {
-    return await LocationService.determinePosition();
+  static Prayer nextPrayer = Prayer.none;
+
+  static Future<LocationData> initLocation() async {
+    return await LocationService.determineLocation();
   }
 
-  static Coordinates getCoordinates(Position location) {
-    final coord = Coordinates(location.latitude, location.longitude);
+  static Coordinates getCoordinates(LocationData location) {
+    final coord = Coordinates(location.latitude!, location.longitude!);
     return coord;
   }
 
-  static Future<List<Placemark>> getAddress(Position location) async {
+  static Future<List<Placemark>> getAddress(LocationData location) async {
     final adress = await placemarkFromCoordinates(
-      location.latitude,
-      location.longitude,
+      location.latitude!,
+      location.longitude!,
       localeIdentifier: 'ara',
     );
     return adress;
@@ -51,33 +55,33 @@ class PrayerTimesData {
     return prayerTimes;
   }
 
-  static Future<List<String>> getPrayerTimesList() async {
+  static Future<List<Map<String, String>>> getPrayerTimesList() async {
     final prayerTimes = await initPrayerTimes();
-    final List<String> prayerData = [];
+    List<Map<String, String>> prayerData = [];
     nxtPray = getNextPrayer(prayerTimes);
     final fajr = DateFormat.jm().format(prayerTimes.fajr);
-    prayerData.add(fajr);
+    prayerData.add({'الفجر': fajr});
 
     final sunrise = DateFormat.jm().format(prayerTimes.sunrise);
-    prayerData.add(sunrise);
+    prayerData.add({'الشروق': sunrise});
 
     final dhuhr = DateFormat.jm().format(prayerTimes.dhuhr);
-    prayerData.add(dhuhr);
+    prayerData.add({'الظهر': dhuhr});
 
     final asr = DateFormat.jm().format(prayerTimes.asr);
-    prayerData.add(asr);
+    prayerData.add({'العصر': asr});
 
     final maghrib = DateFormat.jm().format(prayerTimes.maghrib);
-    prayerData.add(maghrib);
+    prayerData.add({'المغرب': maghrib});
 
     final isha = DateFormat.jm().format(prayerTimes.isha);
-    prayerData.add(isha);
-
+    prayerData.add({'العشاء': isha});
     return prayerData;
   }
 
   static DateTime getNextPrayer(PrayerTimes prayerTimes) {
-    var nextPrayer = prayerTimes.nextPrayer();
+    nextPrayer = prayerTimes.nextPrayer();
+    log(nextPrayer.toString());
     DateTime nextPrayerTimeLeft = prayerTimes.timeForPrayer(nextPrayer)!;
     return nextPrayerTimeLeft;
   }

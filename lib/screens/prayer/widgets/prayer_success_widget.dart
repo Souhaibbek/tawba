@@ -27,16 +27,27 @@ class PrayerSuccessWidget extends StatelessWidget {
                   Column(
                     children: [
                       const Text(
-                        'الصلاة القادمه:',
+                        'بعد:',
                         textAlign: TextAlign.right,
                         textDirection: TextDirection.rtl,
-                        style: AppTextStyles.zekrTextStyle,
+                        style: AppTextStyles.prayerStyle,
                       ),
                       Text(
                         controller.nxtPrayerTimeLeft.value,
                         textDirection: TextDirection.rtl,
-                        style: AppTextStyles.zekrTextStyle
+                        style: AppTextStyles.prayerStyle
                             .copyWith(color: AppColors.kYellowColor),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        controller.nextPrayerName,
+                        textAlign: TextAlign.right,
+                        textDirection: TextDirection.rtl,
+                        style: AppTextStyles.prayerStyle.copyWith(
+                            color: AppColors.kYellowColor, fontSize: 35),
                       ),
                     ],
                   ),
@@ -47,7 +58,7 @@ class PrayerSuccessWidget extends StatelessWidget {
                         'المدينة:',
                         textAlign: TextAlign.right,
                         textDirection: TextDirection.rtl,
-                        style: AppTextStyles.zekrTextStyle,
+                        style: AppTextStyles.prayerStyle,
                       ),
                       Text(
                         (controller.placemarks[1].administrativeArea != null &&
@@ -55,7 +66,7 @@ class PrayerSuccessWidget extends StatelessWidget {
                                     '')
                             ? '${controller.placemarks[1].administrativeArea}'
                             : '${controller.placemarks[0].administrativeArea}',
-                        style: AppTextStyles.zekrTextStyle
+                        style: AppTextStyles.prayerStyle
                             .copyWith(color: AppColors.kYellowColor),
                       ),
                     ],
@@ -70,8 +81,17 @@ class PrayerSuccessWidget extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: controller.prayerData.length,
                 itemBuilder: (context, index) {
+                  // log(controller.prayerData.toString());
+                  // log(controller.prayerData.elementAt(index).keys.toString());
+                  // log(controller.prayerData.elementAt(index).values.toString());
+
                   return PrayerTimeItem(
-                    time: controller.prayerData[index],
+                    time: controller.prayerData
+                        .elementAt(index)
+                        .values
+                        .toString(),
+                    name:
+                        controller.prayerData.elementAt(index).keys.toString(),
                     index: index,
                   );
                 },

@@ -11,37 +11,43 @@ class PrayerErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text(
-          'فشل في تحديد الموقع',
-          style: AppTextStyles.zekrTextStyle,
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        const Text(
-          'الرجاء السماح للتطبيق بتحديد الموقع واعادة الاتصال',
-          style: AppTextStyles.referenceTextStyle,
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        GestureDetector(
-          onTap: onTap,
-          child: Container(
-            color: AppColors.kGradiantColor1,
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'تحديد الموقع',
-                style: AppTextStyles.referenceTextStyle,
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            'فشل في تحديد الموقع',
+            textAlign: TextAlign.center,
+            style: AppTextStyles.prayerStyle,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            'الرجاء السماح للتطبيق بتحديد الموقع واعادة الاتصال',
+            textAlign: TextAlign.center,
+            style: AppTextStyles.prayerStyle
+                .copyWith(color: AppColors.kYellowColor),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          GestureDetector(
+            onTap: onTap,
+            child: Container(
+              color: AppColors.kGradiantColor1,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'تحديد الموقع',
+                  style: AppTextStyles.prayerStyle
+                      .copyWith(color: AppColors.kYellowColor),
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

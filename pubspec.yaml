@@ -40,6 +40,7 @@ dependencies:
   get: ^4.6.5
   intl: ^0.18.1
   just_audio: ^0.9.34
+  location: ^5.0.3
   pdfx: ^2.4.0
   quran: ^1.2.2
   shared_preferences: ^2.2.0

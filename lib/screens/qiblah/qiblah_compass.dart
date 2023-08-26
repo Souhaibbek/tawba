@@ -4,6 +4,7 @@ import 'dart:math' show pi;
 import 'package:flutter/material.dart';
 import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:location/location.dart';
 import 'package:tawba/styles/assets.dart';
 import 'package:tawba/styles/colors.dart';
 
@@ -13,10 +14,10 @@ class QiblahCompass extends StatefulWidget {
   const QiblahCompass({super.key});
 
   @override
-  _QiblahCompassState createState() => _QiblahCompassState();
+  QiblahCompassState createState() => QiblahCompassState();
 }
 
-class _QiblahCompassState extends State<QiblahCompass> {
+class QiblahCompassState extends State<QiblahCompass> {
   final _locationStreamController =
       StreamController<LocationStatus>.broadcast();
 
@@ -26,7 +27,11 @@ class _QiblahCompassState extends State<QiblahCompass> {
     // before running the app please enable your location
 
     final locationStatus = await FlutterQiblah.checkLocationStatus();
-
+    final location = Location();
+    final locationEnabled = await location.serviceEnabled();
+    if (!locationEnabled) {
+      await location.requestService();
+    }
     if (locationStatus.enabled &&
         locationStatus.status == LocationPermission.denied) {
       await FlutterQiblah.requestPermissions();
@@ -45,9 +50,9 @@ class _QiblahCompassState extends State<QiblahCompass> {
 
   @override
   void dispose() {
-    super.dispose();
     _locationStreamController.close();
     FlutterQiblah().dispose();
+    super.dispose();
   }
 
   @override
@@ -74,12 +79,12 @@ class _QiblahCompassState extends State<QiblahCompass> {
 
                 case LocationPermission.denied:
                   return LocationErrorWidget(
-                    error: "Location service permission denied",
+                    error: 'الرجاء السماح للتطبيق بتحديد الموقع واعادة الاتصال',
                     callback: _checkLocationStatus,
                   );
                 case LocationPermission.deniedForever:
                   return LocationErrorWidget(
-                    error: "Location service Denied Forever !",
+                    error: 'الرجاء السماح للتطبيق بتحديد الموقع واعادة الاتصال',
                     callback: _checkLocationStatus,
                   );
                 default:
@@ -87,7 +92,7 @@ class _QiblahCompassState extends State<QiblahCompass> {
               }
             } else {
               return LocationErrorWidget(
-                error: "Please enable Location service",
+                error: 'الرجاء السماح للتطبيق بتحديد الموقع واعادة الاتصال',
                 callback: _checkLocationStatus,
               );
             }
@@ -119,6 +124,12 @@ class _QiblahCompassWidgetState extends State<QiblahCompassWidget>
     //
     animation = Tween(begin: 0.0, end: 0.0).animate(_animationController!);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController!.dispose();
+    super.dispose();
   }
 
   @override

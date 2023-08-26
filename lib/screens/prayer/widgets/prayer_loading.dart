@@ -9,18 +9,15 @@ class LoadingPrayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const CircularProgressIndicator(
+        CircularProgressIndicator(
           color: AppColors.kWhiteColor,
         ),
         Text(
           'انتظار',
-          style: AppTextStyles.referenceTextStyle.copyWith(
-            fontSize: 20,
-            color: AppColors.kWhiteColor,
-          ),
+          style: AppTextStyles.prayerStyle,
         )
       ],
     );
